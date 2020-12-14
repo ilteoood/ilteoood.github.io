@@ -1,20 +1,12 @@
 import React from 'react';
 import './App.scss';
 
-import Typewriter from 'typewriter-effect';
+import {TypeMyName} from "./components/type-my-name/type-my-name";
 
 function App() {
   return (
     <div className="App">
-      <Typewriter
-          onInit={(typewriter) => {
-            typewriter.typeString('iLTeoooD')
-                .pauseFor(1500)
-                .deleteAll()
-                .typeString('Matteo Pietro Dazzi')
-                .start();
-          }}
-      />
+      <TypeMyName></TypeMyName>
     </div>
   );
 }
