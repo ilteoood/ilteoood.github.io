@@ -1,14 +1,17 @@
 import React from 'react';
 import './App.scss';
 
-import {TypeMyName} from "./components/type-my-name/type-my-name";
+import {AboutMe} from "./components/about-me/about-me";
+import {DescribeMe} from "./components/describe-me/describe-me";
 
 function App() {
-  return (
-    <div className="App">
-      <TypeMyName></TypeMyName>
-    </div>
-  );
+
+    return (
+        <div className="App">
+            <AboutMe/>
+            <DescribeMe/>
+        </div>
+    );
 }
 
 export default App;
