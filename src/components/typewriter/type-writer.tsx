@@ -4,7 +4,7 @@ import Typewriter, {TypewriterClass} from "typewriter-effect";
 
 export interface TypeProps {
     loop?: boolean;
-    content: TypeContent[]
+    content: TypeContent[];
 }
 
 export interface TypeContent {
@@ -21,7 +21,7 @@ export const TypeWriter: React.FC<TypeProps> = ({loop, content}) => {
             typewriter.deleteAll();
         });
         typewriter.start();
-    }
+    };
 
     return (
         <Typewriter

@@ -7,5 +7,5 @@ export const NavBar: React.FC = () => {
             <a className="navigator pr-4">Projects</a>
             <a className="navigator pr-4">About me</a>
         </div>
-    )
+    );
 }

@@ -19,5 +19,5 @@ export const AboutMe: React.FC = () => {
                 </figcaption>
             </div>
         </figure>
-    )
+    );
 }

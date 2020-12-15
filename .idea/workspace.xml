@@ -2,8 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84fddc11-e792-4356-bb04-1754ee83547d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/contacts/contacts.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/describe-me/describe-me.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/describe-me/describe-me.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/about-me/about-me.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/about-me/about-me.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navbar/navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/typewriter/type-writer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/typewriter/type-writer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/anchor.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/anchor.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/colors.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/colors.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +50,7 @@
       <option name="presentableId" value="Default" />
       <updated>1607976653754</updated>
       <workItem from="1607976655021" duration="3419000" />
-      <workItem from="1608014877802" duration="18370000" />
+      <workItem from="1608014877802" duration="22003000" />
     </task>
     <servers />
   </component>

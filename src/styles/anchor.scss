@@ -14,4 +14,9 @@ a {
       color: $navigator-color-hover;
     }
   }
+
+  &.icon {
+    color: $icon-color;
+    @apply text-3xl md:text-4xl;
+  }
 }
