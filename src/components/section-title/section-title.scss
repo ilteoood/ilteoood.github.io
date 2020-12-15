@@ -4,5 +4,6 @@
 }
 
 .section-title-padding {
-  @apply py-5 md:py-10 xl:py-16;
+  @apply pt-5 md:pt-10 xl:pt-14;
+  @apply pb-2 md:pb-5 xl:pb-7;
 }

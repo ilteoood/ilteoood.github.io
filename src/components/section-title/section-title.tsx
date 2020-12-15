@@ -13,7 +13,7 @@ export const SectionTitle: React.FC<SectionTitleProp> = ({title, sectionId}) => 
 
     return (
         <div className="section-title-padding">
-            <a id={"#" + sectionId}/>
+            <a id={sectionId}/>
             <TypeWriter content={typeContent} cssClass="section-title-typewriter"/>
         </div>
     );
