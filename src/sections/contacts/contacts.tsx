@@ -30,8 +30,8 @@ export const Contacts: React.FC = () => {
         link: 'https://www.instagram.com/_ilteoood'
     }];
 
-    const iconMapper = ({icon, link}: Contact) =>
-        <a className="icon pl-10 md:pl-16 xl:pl-20" href={link} key={icon.toString()}>
+    const iconMapper = ({icon, link}: Contact, index: number) =>
+        <a className="icon pl-10 md:pl-16 xl:pl-20" href={link} key={index}>
             <FontAwesomeIcon icon={icon}/>
         </a>;
 
