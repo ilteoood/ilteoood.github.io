@@ -11,7 +11,7 @@ export const DescribeMe: React.FC = () => {
     ].map(content => ({content, delay: 1000}));
 
     return (
-        <div className="flex place-content-center">
+        <div className="flex place-content-center pt-20 md:pt-40 xl:pt-80">
             <TypeWriter loop={true} content={typeContent}/>
         </div>
     );
