@@ -1,0 +1,25 @@
+@import "styles/colors";
+
+.App {
+  background-color: $background-color;
+  min-height: 100vh;
+}
+
+a {
+  color: $link-color;
+  &:hover {
+    color: $link-color-hover;
+  }
+
+  .navigator {
+    color: $navigator-color;
+
+    &:hover {
+      color: $navigator-color-hover;
+    }
+  }
+}
+
+.text-color {
+  color: $text-color;
+}
