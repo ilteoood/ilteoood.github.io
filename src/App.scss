@@ -10,3 +10,7 @@
 .text-color {
   color: $text-color;
 }
+
+.padding-content-left {
+  @apply pl-10 md:pl-20 xl:pl-40;
+}

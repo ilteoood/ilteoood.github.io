@@ -5,20 +5,22 @@ import Typewriter, {TypewriterClass} from "typewriter-effect";
 export interface TypeProps {
     loop?: boolean;
     content: TypeContent[];
+    cssClass?: string;
 }
 
 export interface TypeContent {
     content: string;
     delay?: number;
+    deleteAll?: boolean;
 }
 
-export const TypeWriter: React.FC<TypeProps> = ({loop, content}) => {
+export const TypeWriter: React.FC<TypeProps> = ({loop, content, cssClass = 'Typewriter__wrapper'}) => {
 
     const typeWriterInit = (typewriter: TypewriterClass) => {
         content.forEach(content => {
             typewriter.typeString(content.content);
             content.delay && typewriter.pauseFor(content.delay);
-            typewriter.deleteAll();
+            content.deleteAll && typewriter.deleteAll();
         });
         typewriter.start();
     };
@@ -26,7 +28,11 @@ export const TypeWriter: React.FC<TypeProps> = ({loop, content}) => {
     return (
         <Typewriter
             onInit={typeWriterInit}
-            options={{loop}}
+            options={{
+                loop,
+                wrapperClassName: cssClass,
+                cursorClassName: cssClass
+            }}
         />
     );
 

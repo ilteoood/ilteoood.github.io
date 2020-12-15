@@ -1,5 +1,5 @@
 import React from "react";
-import {TypeContent, TypeWriter} from "../typewriter/type-writer";
+import {TypeContent, TypeWriter} from "../../components/typewriter/type-writer";
 import './describe-me.scss';
 
 export const DescribeMe: React.FC = () => {
@@ -8,11 +8,11 @@ export const DescribeMe: React.FC = () => {
         'Software engineer',
         'Technology enthusiast',
         'Music addicted'
-    ].map(content => ({content, delay: 1000}));
+    ].map(content => ({content, delay: 1000, deleteAll: true}));
 
     return (
         <div className="flex place-content-center pt-20 md:pt-40 xl:pt-60">
-            <TypeWriter loop={true} content={typeContent}/>
+            <TypeWriter loop={true} content={typeContent} cssClass="describe-me-typewriter"/>
         </div>
     );
 

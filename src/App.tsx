@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.scss';
 
-import {Introduction} from "./components/introduction/introduction";
-import {DescribeMe} from "./components/describe-me/describe-me";
+import {Introduction} from "./sections/introduction/introduction";
+import {DescribeMe} from "./sections/describe-me/describe-me";
 import {NavBar} from "./components/navbar/navbar";
-import {Contacts} from "./components/contacts/contacts";
-import {AboutMe} from "./components/about-me/about-me";
+import {Contacts} from "./sections/contacts/contacts";
+import {AboutMe} from "./sections/about-me/about-me";
 
 function App() {
 

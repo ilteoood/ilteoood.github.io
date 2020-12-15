@@ -2,10 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84fddc11-e792-4356-bb04-1754ee83547d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/about-me/about-me.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sections/about-me/about-me.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/describe-me/describe-me.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/describe-me/describe-me.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/about-me/about-me.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/sections/about-me/about-me.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/contacts/contacts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/sections/contacts/contacts.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/describe-me/describe-me.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/sections/describe-me/describe-me.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/describe-me/describe-me.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/sections/describe-me/describe-me.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/introduction/introduction.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/sections/introduction/introduction.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/typewriter/type-writer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/typewriter/type-writer.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +30,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../fabiobiondi" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
@@ -32,6 +38,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\GFT\Project\portfolio\src\sections" />
       <recent name="C:\GFT\Project\portfolio\src\styles" />
     </key>
   </component>
