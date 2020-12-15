@@ -1,7 +1,7 @@
 import React from "react";
 import me from '../../resources/me.png';
 
-export const AboutMe: React.FC = () => {
+export const Introduction: React.FC = () => {
     return (
         <figure className="flex place-content-center items-center pt-8 md:pt-16">
             <img className="ml-4 md:ml-0 w-32 h-32 rounded-full" src={me} alt="Me"/>

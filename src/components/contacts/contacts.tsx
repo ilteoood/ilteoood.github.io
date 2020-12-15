@@ -30,12 +30,13 @@ export const Contacts: React.FC = () => {
         link: 'https://www.instagram.com/_ilteoood'
     }];
 
-    const iconMapper = ({icon, link}: Contact) => <a className="icon pl-10 md:pl-15 xl:pl-20" href={link} key={icon.toString()}>
-        <FontAwesomeIcon icon={icon}/>
-    </a>;
+    const iconMapper = ({icon, link}: Contact) =>
+        <a className="icon pl-10 md:pl-15 xl:pl-20" href={link} key={icon.toString()}>
+            <FontAwesomeIcon icon={icon}/>
+        </a>;
 
     return (
-        <div className="flex place-content-center">
+        <div className="flex place-content-center" id="contacts">
             {contacts.map(iconMapper)}
         </div>
     );
