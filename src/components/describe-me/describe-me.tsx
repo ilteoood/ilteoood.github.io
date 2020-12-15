@@ -4,16 +4,11 @@ import './describe-me.scss';
 
 export const DescribeMe: React.FC = () => {
 
-    const typeContent: TypeContent[] = [{
-        content: 'Software engineer',
-        delay: 1000
-    }, {
-        content: 'Technology enthusiast',
-        delay: 1000
-    }, {
-        content: 'Courageous',
-        delay: 1000
-    }];
+    const typeContent: TypeContent[] = [
+        'Software engineer',
+        'Technology enthusiast',
+        'Music lover'
+    ].map(content => ({content, delay: 1000}));
 
     return (
         <div className="flex place-content-center">
