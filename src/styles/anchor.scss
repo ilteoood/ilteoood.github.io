@@ -1,0 +1,17 @@
+@import "colors";
+
+a {
+  color: $link-color;
+  @apply cursor-pointer;
+  &:hover {
+    color: $link-color-hover;
+  }
+
+  &.navigator {
+    color: $navigator-color;
+    @apply capitalize font-bold hover:underline;
+    &:hover {
+      color: $navigator-color-hover;
+    }
+  }
+}

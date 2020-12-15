@@ -1,5 +1,6 @@
 import React from "react";
 import {TypeContent, TypeWriter} from "../typewriter/type-writer";
+import './describe-me.scss';
 
 export const DescribeMe: React.FC = () => {
 

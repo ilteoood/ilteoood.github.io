@@ -1,24 +1,11 @@
-@import "styles/colors";
+@import "styles/anchor";
 
 .App {
   background-color: $background-color;
   min-height: 100vh;
+  @apply text-lg xl:text-xl
 }
 
-a {
-  color: $link-color;
-  &:hover {
-    color: $link-color-hover;
-  }
-
-  .navigator {
-    color: $navigator-color;
-
-    &:hover {
-      color: $navigator-color-hover;
-    }
-  }
-}
 
 .text-color {
   color: $text-color;
