@@ -1,16 +1,9 @@
 @import "styles/anchor";
+@import "./styles/padding";
+@import "./styles/text";
 
 .App {
   background-color: $background-color;
   min-height: 100vh;
-  @apply text-lg xl:text-xl
-}
-
-
-.text-color {
-  color: $text-color;
-}
-
-.padding-content-left {
-  @apply pl-10 md:pl-20 xl:pl-40;
+  @apply text-lg md:text-xl xl:text-2xl
 }

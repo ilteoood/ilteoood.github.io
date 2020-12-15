@@ -36,7 +36,8 @@ export const Contacts: React.FC = () => {
         </a>;
 
     return (
-        <div className="flex place-content-center" id="contacts">
+        <div className="flex place-content-center">
+            <a id="contacts"/>
             {contacts.map(iconMapper)}
         </div>
     );

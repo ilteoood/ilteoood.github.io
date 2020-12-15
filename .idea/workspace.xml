@@ -2,16 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84fddc11-e792-4356-bb04-1754ee83547d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/sections/about-me/about-me.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/section-title/section-title.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/section-title/section-title.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/padding.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/text.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/about-me/about-me.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/sections/about-me/about-me.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/contacts/contacts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/sections/contacts/contacts.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/describe-me/describe-me.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/sections/describe-me/describe-me.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/describe-me/describe-me.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/sections/describe-me/describe-me.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/introduction/introduction.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/sections/introduction/introduction.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/typewriter/type-writer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/typewriter/type-writer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navbar/navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sections/about-me/about-me.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sections/about-me/about-me.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/sections/about-me/about-me.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sections/contacts/contacts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/sections/contacts/contacts.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
