@@ -17,31 +17,40 @@ export const Projects: React.FC = () => {
     return (
         <div className="padding-content">
             <SectionTitle title="Projects" sectionId="projects"/>
-            <div className="flex flex-wrap">
-                {
-                    repositories
-                        .slice(0, repoToShow)
-                        .map(repository =>
-                            <div className="mr-5 md:mr-10 xl:mr-14">
-                                <GithubProjectCard key={repository.name} repository={repository}/>
-                            </div>
-                        )
-                }
-            </div>
+            <RepositoriesCards repoToShow={repoToShow} repositories={repositories}/>
             {repoToShow < repositories.length &&
-            <div className="flex place-content-center">
-                <RepoPaginationButton onClick={() => setRepoToShow(repoToShow * 2)}/>
-            </div>
+            <RepoPaginationButton onClick={() => setRepoToShow(repoToShow * 2)}/>}
+        </div>
+    );
+}
+
+interface RepositoriesCardsProp {
+    repoToShow: number,
+    repositories: Repository[]
+}
+
+const RepositoriesCards: React.FC<RepositoriesCardsProp> = ({repoToShow, repositories}) => {
+    return (
+        <div className="flex flex-wrap">
+            {
+                repositories
+                    .slice(0, repoToShow)
+                    .map(repository =>
+                        <div className="mr-5 md:mr-10 xl:mr-14">
+                            <GithubProjectCard key={repository.name} repository={repository}/>
+                        </div>
+                    )
             }
         </div>
     );
 }
 
-
 const RepoPaginationButton: React.FC<React.ButtonHTMLAttributes<any>> = ({onClick}) => {
     return (
-        <div className="projects-pagination-button text-color" onClick={onClick}>
-            Show more
+        <div className="flex place-content-center">
+            <div className="projects-pagination-button text-color" onClick={onClick}>
+                Show more
+            </div>
         </div>
     );
 }
