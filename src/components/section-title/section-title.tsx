@@ -12,8 +12,7 @@ export const SectionTitle: React.FC<SectionTitleProp> = ({title, sectionId}) => 
     const typeContent: TypeContent[] = [{content: title}];
 
     return (
-        <div className="section-title-padding">
-            <a id={sectionId}/>
+        <div className="section-title-padding" id={sectionId}>
             <TypeWriter content={typeContent} cssClass="section-title-typewriter"/>
         </div>
     );
