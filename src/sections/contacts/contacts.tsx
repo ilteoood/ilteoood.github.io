@@ -31,7 +31,7 @@ export const Contacts: React.FC = () => {
     }];
 
     const iconMapper = ({icon, link}: Contact, index: number) =>
-        <a className="icon pl-10 md:pl-16 xl:pl-20" href={link} key={index}>
+        <a className="icon pl-6 sm:pl-10 md:pl-16 xl:pl-20" href={link} key={index}>
             <FontAwesomeIcon icon={icon}/>
         </a>;
 
