@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {Repository, retrieveFilteredRepo} from "../../services/github.service";
-import {GithubProjectCard} from "../../components/github-project-card/github-project-card";
+import {GitHubProjectCard} from "../../components/github-project-card/git-hub-project-card";
 import {SectionTitle} from "../../components/section-title/section-title";
 import './projets.scss';
 
@@ -36,8 +36,8 @@ const RepositoriesCards: React.FC<RepositoriesCardsProp> = ({repoToShow, reposit
                 repositories
                     .slice(0, repoToShow)
                     .map(repository =>
-                        <div className="mr-5 md:mr-10 xl:mr-14">
-                            <GithubProjectCard key={repository.name} repository={repository}/>
+                        <div className="mr-5 md:mr-10 xl:mr-14 mt-5">
+                            <GitHubProjectCard key={repository.name} repository={repository}/>
                         </div>
                     )
             }

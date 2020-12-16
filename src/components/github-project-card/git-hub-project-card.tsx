@@ -8,7 +8,7 @@ export interface GithubProjectCardProp {
     repository: Repository
 }
 
-export const GithubProjectCard: React.FC<GithubProjectCardProp> = ({repository}) => {
+export const GitHubProjectCard: React.FC<GithubProjectCardProp> = ({repository}) => {
     return (
         <div className="flex flex-col text-color">
             <a className="mr-4" href={repository.html_url}>{repository.name}</a>
