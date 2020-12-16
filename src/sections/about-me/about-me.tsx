@@ -25,7 +25,7 @@ export const AboutMe: React.FC = () => {
                     <a href="https://www.gft.com/it/it/index/societa/chi-siamo/"> GFT Italia Srl</a>.
                 </div>
                 <div className="py-1">
-                    Want to know more? Take a look to my
+                    Want to know more? Keep <a href="#contacts">in touch</a> or take a look to my
                     <a href="https://github.com/ilteoood/resume/raw/master/main.pdf"> resume</a>!
                 </div>
             </div>

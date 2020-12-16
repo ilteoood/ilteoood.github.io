@@ -36,8 +36,8 @@ const RepositoriesCards: React.FC<RepositoriesCardsProp> = ({repoToShow, reposit
                 repositories
                     .slice(0, repoToShow)
                     .map(repository =>
-                        <div className="mr-5 md:mr-10 xl:mr-14 mt-5">
-                            <GitHubProjectCard key={repository.name} repository={repository}/>
+                        <div className="mr-5 md:mr-10 xl:mr-14 mt-5" key={repository.name}>
+                            <GitHubProjectCard repository={repository}/>
                         </div>
                     )
             }
