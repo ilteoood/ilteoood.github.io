@@ -1,5 +1,12 @@
 @import "../../styles/colors";
 
+.navbar {
+  transition: background-color 500ms ease-in;
+  @apply z-10;
+  @apply fixed flex flex-row-reverse;
+  @apply md:p-10 p-5 w-full;
+}
+
 .navbar-scroll-start {
   background-color: $navbar-color-initial;
 }

@@ -19,7 +19,7 @@ export const NavBar: React.FC = () => {
     })
 
     return (
-        <div className={backgroundClass + " fixed flex flex-row-reverse md:p-10 p-5 w-full"}>
+        <div className={backgroundClass + " navbar"}>
             <a className="navigator pr-4" href="#contacts">Contacts</a>
             <a className="navigator pr-4" href="#projects">Projects</a>
             <a className="navigator pr-4" href="#aboutMe">About me</a>
