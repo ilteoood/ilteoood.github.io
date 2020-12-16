@@ -2,3 +2,9 @@
   @apply ml-2 mr-4 mt-2;
   @apply text-lg;
 }
+
+.project-card-container {
+  @apply flex flex-col;
+  @apply w-80;
+  @apply min-h-full;
+}

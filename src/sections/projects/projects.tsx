@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import {Repository, retrieveFilteredRepo} from "../../services/github.service";
 import {GitHubProjectCard} from "../../components/github-project-card/git-hub-project-card";
 import {SectionTitle} from "../../components/section-title/section-title";
-import './projets.scss';
+import './projects.scss';
 
 export const Projects: React.FC = () => {
 
@@ -36,7 +36,7 @@ const RepositoriesCards: React.FC<RepositoriesCardsProp> = ({repoToShow, reposit
                 repositories
                     .slice(0, repoToShow)
                     .map(repository =>
-                        <div className="mr-5 md:mr-10 xl:mr-14 mt-5" key={repository.name}>
+                        <div className="mt-5" key={repository.name}>
                             <GitHubProjectCard repository={repository}/>
                         </div>
                     )

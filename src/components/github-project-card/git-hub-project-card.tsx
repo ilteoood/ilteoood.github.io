@@ -10,9 +10,11 @@ export interface GithubProjectCardProp {
 
 export const GitHubProjectCard: React.FC<GithubProjectCardProp> = ({repository}) => {
     return (
-        <div className="flex flex-col text-color">
-            <a className="mr-4" href={repository.html_url}>{repository.name}</a>
-            <p className="text-lg italic">{repository.description}</p>
+        <div className="project-card-container text-color">
+            <div className="flex flex-col flex-grow">
+                <a className="mr-4" href={repository.html_url}>{repository.name}</a>
+                <p className="text-lg italic">{repository.description}</p>
+            </div>
             <div className="flex flex-row">
                 {repository.forks_count}
                 <FontAwesomeIcon className="project-card-icon" icon={faCodeBranch}/>
