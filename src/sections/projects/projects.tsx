@@ -7,7 +7,7 @@ import './projets.scss';
 export const Projects: React.FC = () => {
 
     const [repositories, setRepositories] = useState<Repository[]>([]);
-    const [repoToShow, setRepoToShow] = useState<number>(3);
+    const [repoToShow, setRepoToShow] = useState<number>(5);
 
     useEffect(() => {
         retrieveFilteredRepo()
