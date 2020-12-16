@@ -26,7 +26,7 @@ export const AboutMe: React.FC = () => {
                 </div>
                 <div className="py-1">
                     Want to know more? Keep <a href="#contacts">in touch</a> or take a look to my
-                    <a href="https://github.com/ilteoood/resume/raw/master/main.pdf"> resume</a>!
+                    <a href="https://github.com/ilteoood/resume/raw/main/main.pdf"> resume</a>!
                 </div>
             </div>
         </div>
