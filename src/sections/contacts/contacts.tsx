@@ -2,6 +2,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import React from "react";
 import {IconProp} from "@fortawesome/fontawesome-svg-core";
 import {faFacebook, faGithub, faInstagram, faLinkedin, faMedium, faTelegram} from "@fortawesome/free-brands-svg-icons";
+import './contacts.scss';
 
 interface Contact {
     icon: IconProp;
@@ -36,7 +37,7 @@ export const Contacts: React.FC = () => {
         </a>;
 
     return (
-        <div className="flex place-content-center py-10 space-x-6 sm:space-x-10 md:space-x-16 xl:space-x-20" id="contacts">
+        <div className="contacts-container" id="contacts">
             {contacts.map(iconMapper)}
         </div>
     );

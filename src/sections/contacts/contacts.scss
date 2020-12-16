@@ -1,0 +1,5 @@
+.contacts-container {
+  @apply flex place-content-center;
+  @apply py-10;
+  @apply space-x-6 sm:space-x-10 md:space-x-16 xl:space-x-20;
+}
