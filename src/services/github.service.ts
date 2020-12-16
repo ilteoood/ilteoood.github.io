@@ -8,7 +8,7 @@ const sortByPushDate = (repo1: any, repo2: any) => {
     return secondDate.getTime() - firstDate.getTime();
 }
 
-const repoBlacklist = ['portfolio', 'resume', 'ilteoood.github.io', 'ilteoood'];
+const repoBlacklist = ['ilteoood.github.io', 'ilteoood'];
 
 export interface Repository {
     fork: boolean;
