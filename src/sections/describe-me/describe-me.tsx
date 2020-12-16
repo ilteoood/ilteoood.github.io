@@ -8,7 +8,7 @@ export const DescribeMe: React.FC = () => {
         'Software engineer',
         'Technology enthusiast',
         'Music addicted'
-    ].map(content => ({content, delay: 1000, deleteAll: true}));
+    ].map(content => ({content, delay: 1500, deleteAll: true}));
 
     return (
         <div className="flex place-content-center pt-20 md:pt-40 xl:pt-60">
