@@ -31,12 +31,12 @@ export const Contacts: React.FC = () => {
     }];
 
     const iconMapper = ({icon, link}: Contact, index: number) =>
-        <a className="icon pl-6 sm:pl-10 md:pl-16 xl:pl-20" href={link} key={index}>
+        <a className="icon" href={link} key={index}>
             <FontAwesomeIcon icon={icon}/>
         </a>;
 
     return (
-        <div className="flex place-content-center py-10" id="contacts">
+        <div className="flex place-content-center py-10 space-x-6 sm:space-x-10 md:space-x-16 xl:space-x-20" id="contacts">
             {contacts.map(iconMapper)}
         </div>
     );
