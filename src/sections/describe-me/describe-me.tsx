@@ -6,7 +6,7 @@ export const DescribeMe: React.FC = () => {
 
     const typeContent: TypeContent[] = [
         'Software engineer',
-        'Technology enthusiast',
+        'Tech enthusiast',
         'Music addicted'
     ].map(content => ({content, delay: 1500, deleteAll: true}));
 
