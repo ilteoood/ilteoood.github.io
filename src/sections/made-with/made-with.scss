@@ -1,0 +1,11 @@
+@import "../../styles/colors";
+
+.heart-icon {
+  @apply mx-2 mt-1.5;
+  color: $heart-color;
+}
+
+.react-icon {
+  @apply ml-2 mt-1.5;
+  color: $react-color;
+}
