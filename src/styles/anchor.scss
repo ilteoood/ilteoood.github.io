@@ -9,7 +9,7 @@ a {
 
   &.navigator {
     color: $navigator-color;
-    @apply capitalize font-bold hover:underline;
+    @apply font-bold hover:underline;
     &:hover {
       color: $navigator-color-hover;
     }
