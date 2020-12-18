@@ -2,6 +2,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import React from "react";
 import {IconProp} from "@fortawesome/fontawesome-svg-core";
 import {faFacebook, faGithub, faInstagram, faLinkedin, faMedium, faTelegram} from "@fortawesome/free-brands-svg-icons";
+import {faEnvelope} from "@fortawesome/free-solid-svg-icons";
 import './contacts.scss';
 
 interface Contact {
@@ -20,6 +21,9 @@ export const Contacts: React.FC = () => {
     }, {
         icon: faGithub,
         link: 'https://github.com/ilteoood/'
+    }, {
+        icon: faEnvelope,
+        link: 'mailto:matteopietro.dazzi@gmail.com'
     }, {
         icon: faTelegram,
         link: 'https://telegram.me/iLTeoooD'
