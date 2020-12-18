@@ -8,8 +8,6 @@ const sortByPushDate = (repo1: any, repo2: any) => {
     return secondDate.getTime() - firstDate.getTime();
 }
 
-const repoBlacklist = ['ilteoood.github.io', 'ilteoood'];
-
 export interface Repository {
     fork: boolean;
     archived: boolean;
@@ -30,7 +28,6 @@ export function retrieveFilteredRepo(): Observable<Repository[]> {
             mergeMap(repoResponse => repoResponse),
             filter(repository => !repository.fork),
             filter(repository => !repository.archived),
-            filter(repository => !repoBlacklist.includes(repository.name)),
             scan((accumulator, value) => [...accumulator, value], [] as Repository[]),
             last(),
             map(repoArray => repoArray.sort(sortByPushDate))
