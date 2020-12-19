@@ -1,23 +1,32 @@
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import React from "react";
-import {IconProp} from "@fortawesome/fontawesome-svg-core";
+import {IconDefinition, IconProp} from "@fortawesome/fontawesome-svg-core";
 import {faFacebook, faGithub, faInstagram, faLinkedin, faMedium, faTelegram} from "@fortawesome/free-brands-svg-icons";
-import {faEnvelope} from "@fortawesome/free-solid-svg-icons";
+import {faEnvelope, faSquare, faCircle} from "@fortawesome/free-solid-svg-icons";
 import './contacts.scss';
+
+type BackgroundType = 'circle' | 'square';
 
 interface Contact {
     icon: IconProp;
     link: string;
+    backgroundType?: BackgroundType;
 }
+
+type IconBackground = {
+    [k in BackgroundType]: IconDefinition;
+};
 
 export const Contacts: React.FC = () => {
 
     const contacts: Contact[] = [{
         icon: faMedium,
-        link: 'https://medium.com/@iLTeoooD'
+        link: 'https://medium.com/@iLTeoooD',
+        backgroundType: "square"
     }, {
         icon: faLinkedin,
-        link: 'https://www.linkedin.com/in/ilteoood/'
+        link: 'https://www.linkedin.com/in/ilteoood/',
+        backgroundType: "square"
     }, {
         icon: faGithub,
         link: 'https://github.com/ilteoood/'
@@ -26,17 +35,29 @@ export const Contacts: React.FC = () => {
         link: 'mailto:matteopietro.dazzi@gmail.com'
     }, {
         icon: faTelegram,
-        link: 'https://telegram.me/iLTeoooD'
+        link: 'https://telegram.me/iLTeoooD',
+        backgroundType: "circle"
     }, {
         icon: faFacebook,
-        link: 'https://facebook.com/iLTeoooD'
+        link: 'https://facebook.com/iLTeoooD',
+        backgroundType: "circle"
     }, {
         icon: faInstagram,
         link: 'https://www.instagram.com/_ilteoood'
     }];
 
-    const iconMapper = ({icon, link}: Contact, index: number) =>
-        <a className="icon" href={link} key={index}>
+    const iconsMap: IconBackground = {
+        'square': faSquare,
+        'circle': faCircle
+    };
+
+    const applyBackground = (backgroundType: BackgroundType) => {
+        return <FontAwesomeIcon icon={iconsMap[backgroundType]} className="fa-white-background"/>;
+    }
+
+    const iconMapper = ({icon, link, backgroundType}: Contact, index: number) =>
+        <a className="icon fa-layers fa-fw" href={link} key={index}>
+            {backgroundType && applyBackground(backgroundType)}
             <FontAwesomeIcon icon={icon}/>
         </a>;
 
