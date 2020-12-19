@@ -1,5 +1,35 @@
+@import "../../styles/colors";
+
 .contacts-container {
   @apply flex place-content-center;
   @apply py-10;
   @apply space-x-6 sm:space-x-10 md:space-x-16 xl:space-x-20;
+}
+
+.fa-instagram * {
+  fill: url(#instagradient);
+}
+
+.fa-facebook {
+  background: radial-gradient(white 67%, transparent 23%);
+  color: $facebook-color;
+}
+
+.fa-telegram {
+  background: radial-gradient(white 50%, transparent 50%);
+  color: $telegram-color;
+}
+
+.fa-linkedin {
+  background: radial-gradient(circle at 50%, white 65%, transparent 35%);
+  color: $linkedin-color;
+}
+
+.fa-envelope {
+  color: $envelop-color;
+}
+
+.fa-medium {
+  background: radial-gradient(white 60%, transparent 40%);
+  color: black;
 }
