@@ -41,10 +41,12 @@ export const Contacts: React.FC = () => {
         </a>;
 
     return (
-        <div className="contacts-container" id="contacts">
-            {contacts.map(iconMapper)}
+        <>
+            <div className="contacts-container" id="contacts">
+                {contacts.map(iconMapper)}
+            </div>
             <InstagramGradient/>
-        </div>
+        </>
     );
 
 }
