@@ -21,7 +21,7 @@ export const Contacts: React.FC = () => {
 
     const contacts: Contact[] = [{
         icon: faMedium,
-        link: 'https://medium.com/@iLTeoooD',
+        link: 'https://ilteoood.medium.com/',
         backgroundType: "square"
     }, {
         icon: faLinkedin,
