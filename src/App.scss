@@ -5,5 +5,5 @@
 .App {
   background-color: $background-color;
   min-height: 100vh;
-  @apply text-lg md:text-xl xl:text-2xl
+  @apply text-lg md:text-xl xl:text-2xl;
 }
