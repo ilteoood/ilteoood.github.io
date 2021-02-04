@@ -7,7 +7,7 @@ import {RepositoriesCards} from "./repositories-cards";
 export const Projects: React.FC = () => {
 
     const [repositories, setRepositories] = useState<Repository[]>([]);
-    const [repoToShow, setRepoToShow] = useState<number>(5);
+    const [repoToShow, setRepoToShow] = useState<number>(6);
 
     useEffect(() => {
         retrieveFilteredRepo().subscribe(setRepositories);

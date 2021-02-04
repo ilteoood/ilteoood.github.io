@@ -9,7 +9,7 @@ interface RepositoriesCardsProp {
 
 export const RepositoriesCards: React.FC<RepositoriesCardsProp> = ({repoToShow, repositories}) => {
     return (
-        <div className="flex flex-wrap">
+        <div className="flex flex-wrap justify-between">
             {
                 repositories
                     .slice(0, repoToShow)
