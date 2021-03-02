@@ -22,7 +22,7 @@ export interface Repository {
 }
 
 export function retrieveFilteredRepo(): Observable<Repository[]> {
-    return fromFetch<Repository[]>("https://api.github.com/users/ilteoood/repos",
+    return fromFetch<Repository[]>("https://api.github.com/users/ilteoood/repos?per_page=100",
         {selector: response => response.json()})
         .pipe(
             mergeMap(repoResponse => repoResponse),
