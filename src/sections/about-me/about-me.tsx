@@ -22,7 +22,7 @@ export const AboutMe: React.FC = () => {
                 </div>
                 <div className="py-1">
                     Currently I'm working for
-                    <a href="https://www.gft.com/it/it/index/societa/chi-siamo/"> GFT Italia Srl</a>.
+                    <a href="https://www.mia-platform.eu/"> Mia-Platform</a>.
                 </div>
                 <div className="py-1">
                     Want to know more? Keep <a href="#contacts">in touch</a> or take a look to my
