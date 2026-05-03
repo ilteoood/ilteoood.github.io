@@ -1,4 +1,4 @@
-# Diego Rucci — Software Engineer Portfolio
+# Matteo Pietro Dazzi — Staff Software Developer Portfolio
 
 A modern, dark-themed personal portfolio built with [Astro](https://astro.build) and React.
 
@@ -50,10 +50,6 @@ src/
 - Smooth scroll navigation
 - Custom typewriter animation
 - Animated page sections on scroll
-
-## Development
-
-The site uses React components within Astro for interactive sections. Static content is rendered server-side for optimal performance.
 
 ## License
 
