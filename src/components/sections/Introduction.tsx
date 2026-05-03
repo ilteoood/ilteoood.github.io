@@ -45,7 +45,7 @@ export default function Introduction() {
             <div className="relative aspect-square overflow-hidden rounded-lg bg-[#18181b]">
               <img
                 src="https://av.githubusercontent.com/u/6383527?v=4"
-                alt="Diego Rucci"
+                alt="Matteo Pietro Dazzi"
                 className="w-full h-full object-cover"
               />
               {/* Overlay gradient */}
@@ -100,7 +100,7 @@ export default function Introduction() {
                 className="text-lg font-semibold text-[#fafaf9] mb-1"
                 style={{ fontFamily: 'Playfair Display, serif' }}
               >
-                Diego Rucci
+                Matteo Pietro Dazzi
               </p>
               <a
                 href="https://telegram.me/iLTeoooD"

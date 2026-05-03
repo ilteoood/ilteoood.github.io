@@ -11,7 +11,7 @@ export default function MadeWith() {
           <div className="flex items-center gap-3">
             <div className="w-2 h-2 rounded-full bg-[#38bdf8] animate-pulse" />
             <span className="text-sm text-[#52525b]">
-              {new Date().getFullYear()} Diego Rucci
+              {new Date().getFullYear()} Matteo Pietro Dazzi
             </span>
           </div>
 
