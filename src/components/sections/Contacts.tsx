@@ -38,15 +38,6 @@ export default function Contacts() {
       id="contacts"
       className="min-h-screen py-24 px-6 relative overflow-hidden flex items-center"
     >
-      {/* Background number */}
-      <div
-        className="absolute text-[20vw] font-bold text-[#111113] select-none pointer-events-none"
-        aria-hidden="true"
-        style={{ fontFamily: 'Playfair Display, serif' }}
-      >
-        04
-      </div>
-
       <div className="max-w-4xl mx-auto w-full relative z-10">
         {/* Section header */}
         <div className="flex items-center gap-6 mb-16">
@@ -96,22 +87,6 @@ export default function Contacts() {
               <FontAwesomeIcon icon={contact.icon} />
             </a>
           ))}
-        </div>
-
-        {/* Direct email CTA */}
-        <div
-          className={`mt-16 p-8 bg-[#18181b] border border-[#27272a] rounded-xl text-center transition-all duration-1000 delay-400 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}
-        >
-          <p className="text-[#52525b] text-sm mb-4">Prefer email?</p>
-          <a
-            href="mailto:matteopietro.dazzi@gmail.com"
-            className="text-2xl sm:text-3xl text-[#fafaf9] hover:text-[#38bdf8] transition-colors duration-300"
-            style={{ fontFamily: 'Playfair Display, serif' }}
-          >
-            matteopietro.dazzi@gmail.com
-          </a>
         </div>
 
         {/* Decorative line */}
