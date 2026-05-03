@@ -46,7 +46,7 @@ export default function DescribeMe() {
             opacity: 0,
           }}
         >
-          <span className="text-[#fafaf9]">Matteo </span>
+          <span className="text-[#fafaf9]">Matteo Pietro</span>
           <span className="text-[#fafaf9]">Dazzi</span>
         </h1>
 
