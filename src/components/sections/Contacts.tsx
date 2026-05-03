@@ -13,8 +13,6 @@ import { useState, useEffect } from 'react';
 interface ContactItem {
   icon: any;
   url: string;
-  label: string;
-  hoverColor: string;
 }
 
 export default function Contacts() {
@@ -26,13 +24,13 @@ export default function Contacts() {
   }, []);
 
   const contacts: ContactItem[] = [
-    { icon: faMedium, url: 'https://ilteoood.medium.com/', label: 'Medium', hoverColor: 'hover:bg-[#000]' },
-    { icon: faLinkedin, url: 'https://www.linkedin.com/in/ilteoood/', label: 'LinkedIn', hoverColor: 'hover:bg-[#0e76a8]' },
-    { icon: faGithub, url: 'https://github.com/ilteoood/', label: 'GitHub', hoverColor: 'hover:bg-[#333]' },
-    { icon: faEnvelope, url: 'mailto:matteopietro.dazzi@gmail.com', label: 'Email', hoverColor: 'hover:bg-[#ea4335]' },
-    { icon: faTelegram, url: 'https://telegram.me/iLTeoooD', label: 'Telegram', hoverColor: 'hover:bg-[#0088cc]' },
-    { icon: faFacebook, url: 'https://facebook.com/iLTeoooD', label: 'Facebook', hoverColor: 'hover:bg-[#3b5998]' },
-    { icon: faInstagram, url: 'https://www.instagram.com/_ilteoood', label: 'Instagram', hoverColor: 'hover:bg-gradient-to-br hover:from-[#833ab4] hover:via-[#fd1d1d] hover:to-[#fcb045]' },
+    { icon: faMedium, url: 'https://ilteoood.medium.com/' },
+    { icon: faLinkedin, url: 'https://www.linkedin.com/in/ilteoood/' },
+    { icon: faGithub, url: 'https://github.com/ilteoood/' },
+    { icon: faEnvelope, url: 'mailto:matteopietro.dazzi@gmail.com' },
+    { icon: faTelegram, url: 'https://telegram.me/iLTeoooD' },
+    { icon: faFacebook, url: 'https://facebook.com/iLTeoooD' },
+    { icon: faInstagram, url: 'https://www.instagram.com/_ilteoood' },
   ];
 
   return (
@@ -77,9 +75,9 @@ export default function Contacts() {
           </p>
         </div>
 
-        {/* Contact grid */}
+        {/* Contact icons */}
         <div
-          className={`grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 transition-all duration-1000 delay-200 ${
+          className={`flex flex-wrap justify-center gap-8 transition-all duration-1000 delay-200 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
@@ -89,24 +87,13 @@ export default function Contacts() {
               href={contact.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative flex flex-col items-center justify-center p-8 bg-[#18181b] border border-[#27272a] rounded-xl hover:border-[#38bdf8] transition-all duration-500 hover:-translate-y-1"
+              className="text-4xl text-[#52525b] hover:text-[#38bdf8] transition-all duration-300 hover:scale-110"
               style={{
                 animationDelay: `${index * 100}ms`,
               }}
+              aria-label={contact.url}
             >
-              {/* Icon */}
-              <FontAwesomeIcon
-                icon={contact.icon}
-                className="text-4xl text-[#52525b] group-hover:text-[#fafaf9] transition-colors duration-300 mb-4"
-              />
-
-              {/* Label */}
-              <span className="text-xs text-[#52525b] group-hover:text-[#fafaf9] transition-colors duration-300 uppercase tracking-wider">
-                {contact.label}
-              </span>
-
-              {/* Hover indicator */}
-              <div className="absolute top-4 right-4 w-2 h-2 rounded-full bg-[#27272a] group-hover:bg-[#38bdf8] transition-colors duration-300" />
+              <FontAwesomeIcon icon={contact.icon} />
             </a>
           ))}
         </div>
