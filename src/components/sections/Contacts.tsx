@@ -13,6 +13,8 @@ import { useState, useEffect } from 'react';
 interface ContactItem {
   icon: any;
   url: string;
+  bgColor: string;
+  hoverColor: string;
 }
 
 export default function Contacts() {
@@ -24,13 +26,13 @@ export default function Contacts() {
   }, []);
 
   const contacts: ContactItem[] = [
-    { icon: faMedium, url: 'https://ilteoood.medium.com/' },
-    { icon: faLinkedin, url: 'https://www.linkedin.com/in/ilteoood/' },
-    { icon: faGithub, url: 'https://github.com/ilteoood/' },
-    { icon: faEnvelope, url: 'mailto:matteopietro.dazzi@gmail.com' },
-    { icon: faTelegram, url: 'https://telegram.me/iLTeoooD' },
-    { icon: faFacebook, url: 'https://facebook.com/iLTeoooD' },
-    { icon: faInstagram, url: 'https://www.instagram.com/_ilteoood' },
+    { icon: faMedium, url: 'https://ilteoood.medium.com/', bgColor: '#000000', hoverColor: '#ffffff' },
+    { icon: faLinkedin, url: 'https://www.linkedin.com/in/ilteoood/', bgColor: '#0A66C2', hoverColor: '#ffffff' },
+    { icon: faGithub, url: 'https://github.com/ilteoood/', bgColor: '#333333', hoverColor: '#ffffff' },
+    { icon: faEnvelope, url: 'mailto:matteopietro.dazzi@gmail.com', bgColor: '#EA4335', hoverColor: '#ffffff' },
+    { icon: faTelegram, url: 'https://telegram.me/iLTeoooD', bgColor: '#0088CC', hoverColor: '#ffffff' },
+    { icon: faFacebook, url: 'https://facebook.com/iLTeoooD', bgColor: '#1877F2', hoverColor: '#ffffff' },
+    { icon: faInstagram, url: 'https://www.instagram.com/_ilteoood', bgColor: 'linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)', hoverColor: '#ffffff' },
   ];
 
   return (
@@ -68,7 +70,7 @@ export default function Contacts() {
 
         {/* Contact icons */}
         <div
-          className={`flex flex-wrap justify-center gap-8 transition-all duration-1000 delay-200 ${
+          className={`flex flex-wrap justify-center gap-6 transition-all duration-1000 delay-200 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
@@ -78,13 +80,17 @@ export default function Contacts() {
               href={contact.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-4xl text-[#52525b] hover:text-[#38bdf8] transition-all duration-300 hover:scale-110"
+              className="w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-300 hover:scale-110"
               style={{
+                background: contact.bgColor,
                 animationDelay: `${index * 100}ms`,
               }}
               aria-label={contact.url}
             >
-              <FontAwesomeIcon icon={contact.icon} />
+              <FontAwesomeIcon
+                icon={contact.icon}
+                className="text-2xl text-white"
+              />
             </a>
           ))}
         </div>
