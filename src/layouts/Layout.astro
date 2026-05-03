@@ -1,6 +1,5 @@
 ---
 import '../styles/global.css';
-import QueryProvider from '../components/QueryProvider';
 
 interface Props {
   title: string;
@@ -20,8 +19,6 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body class="bg-gray-800 text-gray-300 min-h-screen">
-    <QueryProvider client:load>
-      <slot />
-    </QueryProvider>
+    <slot />
   </body>
 </html>
