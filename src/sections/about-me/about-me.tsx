@@ -22,7 +22,7 @@ export const AboutMe: React.FC = () => {
                 </div>
                 <div className="py-1">
                     Currently I'm working for
-                    <a href="https://www.nearform.com/"> NearForm</a>.
+                    <a href="https://www.nearform.com/"> Nearform</a>.
                 </div>
                 <div className="py-1">
                     Want to know more? Keep <a href="#contacts">in touch</a> or take a look to my

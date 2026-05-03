@@ -97,7 +97,7 @@ function ProjectsContent() {
                   name={repo.name}
                   description={repo.description}
                   htmlUrl={repo.html_url}
-                  forks={repo.forks}
+                  forks={repo.forks_count}
                   watchers={repo.watchers_count}
                   openIssues={repo.open_issues_count}
                   stargazersCount={repo.stargazers_count}

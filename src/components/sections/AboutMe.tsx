@@ -8,7 +8,7 @@ export default function AboutMe() {
         <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-100">About Me</h2>
         <p className="text-lg md:text-xl leading-relaxed mb-6">
           I am a software engineer based in Milan, Italy. I studied Computer Science at the University of Milan.
-          Currently working at NearForm, where I continue to grow as a developer.
+          Currently working at Nearform, where I continue to grow as a developer.
         </p>
         <p className="text-lg md:text-xl leading-relaxed mb-6">
           I am a passionate developer, always looking for new technologies to learn and new challenges to face.
@@ -29,7 +29,7 @@ export default function AboutMe() {
             rel="noopener noreferrer"
             className="px-4 py-2 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors"
           >
-            NearForm
+            Nearform
           </a>
           <a
             href="#"
