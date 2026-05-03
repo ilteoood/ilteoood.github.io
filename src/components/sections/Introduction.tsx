@@ -15,7 +15,7 @@ export default function Introduction() {
             "Learning is a lifelong journey, and I'm enjoying every step of it."
           </blockquote>
           <p className="text-2xl md:text-3xl font-semibold text-gray-100">
-            Diego Rucci
+            Matteo Pietro Dazzi
           </p>
           <a
             href="https://github.com/ilteoood"
