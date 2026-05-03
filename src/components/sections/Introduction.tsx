@@ -1,6 +1,6 @@
 import React from "react";
 
-export const Introduction: React.FC = () => {
+const Introduction = () => {
     return (
         <figure className="flex place-content-center items-center pt-8 md:pt-16">
             <img className="ml-4 md:ml-0 w-32 h-32 rounded-full"
@@ -22,3 +22,4 @@ export const Introduction: React.FC = () => {
         </figure>
     );
 }
+export default Introduction;
