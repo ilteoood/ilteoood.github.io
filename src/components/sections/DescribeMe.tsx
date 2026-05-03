@@ -30,7 +30,7 @@ export default function DescribeMe() {
       <div className="relative z-10 text-center max-w-4xl">
         {/* Eyebrow */}
         <p
-          className="text-xs tracking-[0.4em] uppercase text-[#ef4444] mb-6"
+          className="text-xs tracking-[0.4em] uppercase text-[#38bdf8] mb-6"
           style={{ animation: 'fadeIn 1s ease-out forwards' }}
         >
           Portfolio

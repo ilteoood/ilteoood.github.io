@@ -70,7 +70,7 @@ export default function Introduction() {
           >
             {/* Section label */}
             <div className="flex items-center gap-4 mb-6">
-              <span className="text-xs tracking-[0.3em] uppercase text-[#ef4444]">
+              <span className="text-xs tracking-[0.3em] uppercase text-[#38bdf8]">
                 Introduction
               </span>
               <div className="flex-1 h-px bg-gradient-to-r from-[#27272a] to-transparent" />
@@ -91,7 +91,7 @@ export default function Introduction() {
             {/* Divider */}
             <div className="flex items-center gap-6 mb-6">
               <div className="w-12 h-px bg-[#27272a]" />
-              <div className="w-2 h-2 rounded-full bg-[#ef4444]" />
+              <div className="w-2 h-2 rounded-full bg-[#38bdf8]" />
             </div>
 
             {/* Caption */}
@@ -106,7 +106,7 @@ export default function Introduction() {
                 href="https://telegram.me/iLTeoooD"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm text-[#52525b] hover:text-[#ef4444] transition-colors duration-300"
+                className="text-sm text-[#52525b] hover:text-[#38bdf8] transition-colors duration-300"
               >
                 @iLTeoooD
               </a>

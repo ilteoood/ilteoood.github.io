@@ -9,7 +9,7 @@ export default function MadeWith() {
         <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
           {/* Left - Copyright */}
           <div className="flex items-center gap-3">
-            <div className="w-2 h-2 rounded-full bg-[#ef4444] animate-pulse" />
+            <div className="w-2 h-2 rounded-full bg-[#38bdf8] animate-pulse" />
             <span className="text-sm text-[#52525b]">
               {new Date().getFullYear()} Diego Rucci
             </span>
@@ -18,7 +18,7 @@ export default function MadeWith() {
           {/* Center - Made with */}
           <p className="flex items-center gap-3 text-sm text-[#52525b]">
             <span>Crafted with</span>
-            <FontAwesomeIcon icon={faHeart} className="text-[#ef4444] text-xs" />
+            <FontAwesomeIcon icon={faHeart} className="text-[#38bdf8] text-xs" />
             <span>and</span>
             <span className="text-[#61dafb] font-mono text-xs">React</span>
           </p>

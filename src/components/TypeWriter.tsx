@@ -64,7 +64,7 @@ export default function TypeWriter({
     >
       <span>{displayText}</span>
       <span
-        className="ml-1 w-0.5 h-[1em] bg-[#ef4444] animate-blink"
+        className="ml-1 w-0.5 h-[1em] bg-[#38bdf8] animate-blink"
         aria-hidden="true"
       />
       <style>{`

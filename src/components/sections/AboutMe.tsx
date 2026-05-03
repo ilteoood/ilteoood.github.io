@@ -16,7 +16,7 @@ export default function AboutMe() {
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Section header */}
         <div className="flex items-center gap-6 mb-16">
-          <span className="text-xs tracking-[0.3em] uppercase text-[#ef4444]">
+          <span className="text-xs tracking-[0.3em] uppercase text-[#38bdf8]">
             About
           </span>
           <div className="flex-1 h-px bg-gradient-to-r from-[#27272a] to-transparent" />
@@ -30,7 +30,7 @@ export default function AboutMe() {
               style={{ fontFamily: 'Playfair Display, serif' }}
             >
               <span className="text-[#fafaf9]">The </span>
-              <span className="text-[#ef4444]">Story</span>
+              <span className="text-[#38bdf8]">Story</span>
               <br />
               <span className="text-[#fafaf9]">Behind</span>
             </h2>
@@ -39,17 +39,17 @@ export default function AboutMe() {
             <div className="relative w-24 h-24 mb-8">
               <div className="absolute inset-0 border border-[#27272a] rounded-full" />
               <div
-                className="absolute inset-4 border border-[#ef4444] rounded-full"
+                className="absolute inset-4 border border-[#38bdf8] rounded-full"
                 style={{ animation: 'spin 20s linear infinite' }}
               />
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 bg-[#ef4444] rounded-full" />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 bg-[#38bdf8] rounded-full" />
             </div>
           </div>
 
           {/* Right column - Content */}
           <div className="space-y-8">
             <div className="relative pl-8 border-l border-[#27272a]">
-              <div className="absolute -left-2 top-0 w-4 h-4 bg-[#18181b] border-2 border-[#ef4444] rounded-full" />
+              <div className="absolute -left-2 top-0 w-4 h-4 bg-[#18181b] border-2 border-[#38bdf8] rounded-full" />
               <p className="text-[#a1a1aa] leading-relaxed">
                 Based in Milan, Italy, I studied Computer Science at the University of Milan.
                 My journey in tech is driven by curiosity and a relentless desire to build
@@ -92,7 +92,7 @@ export default function AboutMe() {
                 ].map((tag) => (
                   <span
                     key={tag}
-                    className="px-4 py-2 bg-[#18181b] border border-[#27272a] rounded-lg text-sm text-[#a1a1aa] hover:border-[#ef4444] hover:text-[#fafaf9] transition-colors duration-300 cursor-default"
+                    className="px-4 py-2 bg-[#18181b] border border-[#27272a] rounded-lg text-sm text-[#a1a1aa] hover:border-[#38bdf8] hover:text-[#fafaf9] transition-colors duration-300 cursor-default"
                   >
                     {tag}
                   </span>
@@ -106,13 +106,13 @@ export default function AboutMe() {
                 href="https://www.unimi.it/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center gap-3 px-6 py-4 bg-[#18181b] border border-[#27272a] rounded-lg hover:border-[#ef4444] transition-all duration-300"
+                className="group flex items-center gap-3 px-6 py-4 bg-[#18181b] border border-[#27272a] rounded-lg hover:border-[#38bdf8] transition-all duration-300"
               >
                 <span className="text-sm text-[#a1a1aa] group-hover:text-[#fafaf9]">
                   University of Milan
                 </span>
                 <svg
-                  className="w-4 h-4 text-[#52525b] group-hover:text-[#ef4444] transition-colors"
+                  className="w-4 h-4 text-[#52525b] group-hover:text-[#38bdf8] transition-colors"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -129,13 +129,13 @@ export default function AboutMe() {
                 href="https://www.nearform.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center gap-3 px-6 py-4 bg-[#18181b] border border-[#27272a] rounded-lg hover:border-[#ef4444] transition-all duration-300"
+                className="group flex items-center gap-3 px-6 py-4 bg-[#18181b] border border-[#27272a] rounded-lg hover:border-[#38bdf8] transition-all duration-300"
               >
                 <span className="text-sm text-[#a1a1aa] group-hover:text-[#fafaf9]">
                   NearForm
                 </span>
                 <svg
-                  className="w-4 h-4 text-[#52525b] group-hover:text-[#ef4444] transition-colors"
+                  className="w-4 h-4 text-[#52525b] group-hover:text-[#38bdf8] transition-colors"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -150,7 +150,7 @@ export default function AboutMe() {
               </a>
               <a
                 href="#"
-                className="group flex items-center gap-3 px-6 py-4 bg-[#ef4444] rounded-lg hover:bg-[#dc2626] transition-colors duration-300"
+                className="group flex items-center gap-3 px-6 py-4 bg-[#38bdf8] rounded-lg hover:bg-[#0ea5e9] transition-colors duration-300"
               >
                 <svg
                   className="w-4 h-4 text-white"

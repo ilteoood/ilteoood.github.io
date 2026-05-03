@@ -66,11 +66,11 @@ function GitHubProjectCard({
       href={htmlUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className="group block bg-[#18181b] border border-[#27272a] rounded-xl p-6 hover:border-[#ef4444] transition-all duration-500 hover:transform hover:-translate-y-1"
+      className="group block bg-[#18181b] border border-[#27272a] rounded-xl p-6 hover:border-[#38bdf8] transition-all duration-500 hover:transform hover:-translate-y-1"
     >
       <div className="flex items-start justify-between mb-4">
         <div className="flex-1">
-          <h3 className="text-lg font-semibold text-[#fafaf9] mb-2 group-hover:text-[#ef4444] transition-colors duration-300">
+          <h3 className="text-lg font-semibold text-[#fafaf9] mb-2 group-hover:text-[#38bdf8] transition-colors duration-300">
             {name}
           </h3>
           <p className="text-sm text-[#52525b] line-clamp-2 leading-relaxed">
@@ -144,13 +144,13 @@ function ProjectsContent() {
       >
         <div className="max-w-6xl mx-auto">
           <div className="flex items-center gap-6 mb-16">
-            <span className="text-xs tracking-[0.3em] uppercase text-[#ef4444]">
+            <span className="text-xs tracking-[0.3em] uppercase text-[#38bdf8]">
               Work
             </span>
             <div className="flex-1 h-px bg-gradient-to-r from-[#27272a] to-transparent" />
           </div>
           <div className="text-center">
-            <div className="inline-block w-8 h-8 border-2 border-[#27272a] border-t-[#ef4444] rounded-full animate-spin" />
+            <div className="inline-block w-8 h-8 border-2 border-[#27272a] border-t-[#38bdf8] rounded-full animate-spin" />
           </div>
         </div>
       </section>
@@ -174,7 +174,7 @@ function ProjectsContent() {
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Section header */}
         <div className="flex items-center gap-6 mb-16">
-          <span className="text-xs tracking-[0.3em] uppercase text-[#ef4444]">
+          <span className="text-xs tracking-[0.3em] uppercase text-[#38bdf8]">
             Projects
           </span>
           <div className="flex-1 h-px bg-gradient-to-r from-[#27272a] to-transparent" />
@@ -191,7 +191,7 @@ function ProjectsContent() {
             style={{ fontFamily: 'Playfair Display, serif' }}
           >
             <span className="text-[#fafaf9]">Open </span>
-            <span className="text-[#ef4444]">Source</span>
+            <span className="text-[#38bdf8]">Source</span>
           </h2>
           <p className="text-[#a1a1aa] max-w-2xl">
             A collection of projects I've worked on. From personal experiments to production
@@ -201,7 +201,7 @@ function ProjectsContent() {
 
         {isLoading ? (
           <div className="text-center py-20">
-            <div className="inline-block w-8 h-8 border-2 border-[#27272a] border-t-[#ef4444] rounded-full animate-spin" />
+            <div className="inline-block w-8 h-8 border-2 border-[#27272a] border-t-[#38bdf8] rounded-full animate-spin" />
           </div>
         ) : (
           <>
@@ -230,7 +230,7 @@ function ProjectsContent() {
                 <button
                   onClick={() => fetchNextPage()}
                   disabled={isFetchingNextPage}
-                  className="group px-8 py-4 bg-[#18181b] border border-[#27272a] rounded-lg hover:border-[#ef4444] transition-all duration-300 disabled:opacity-50"
+                  className="group px-8 py-4 bg-[#18181b] border border-[#27272a] rounded-lg hover:border-[#38bdf8] transition-all duration-300 disabled:opacity-50"
                 >
                   <span className="text-sm text-[#a1a1aa] group-hover:text-[#fafaf9] transition-colors">
                     {isFetchingNextPage ? 'Loading...' : 'Load More Projects'}

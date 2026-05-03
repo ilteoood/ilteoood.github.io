@@ -52,7 +52,7 @@ export default function Contacts() {
       <div className="max-w-4xl mx-auto w-full relative z-10">
         {/* Section header */}
         <div className="flex items-center gap-6 mb-16">
-          <span className="text-xs tracking-[0.3em] uppercase text-[#ef4444]">
+          <span className="text-xs tracking-[0.3em] uppercase text-[#38bdf8]">
             Connect
           </span>
           <div className="flex-1 h-px bg-gradient-to-r from-[#27272a] to-transparent" />
@@ -69,7 +69,7 @@ export default function Contacts() {
             style={{ fontFamily: 'Playfair Display, serif' }}
           >
             <span className="text-[#fafaf9]">Let's </span>
-            <span className="text-[#ef4444]">Talk</span>
+            <span className="text-[#38bdf8]">Talk</span>
           </h2>
           <p className="text-[#a1a1aa] max-w-xl">
             Have a project in mind or just want to say hello? Feel free to reach out.
@@ -89,7 +89,7 @@ export default function Contacts() {
               href={contact.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative flex flex-col items-center justify-center p-8 bg-[#18181b] border border-[#27272a] rounded-xl hover:border-[#ef4444] transition-all duration-500 hover:-translate-y-1"
+              className="group relative flex flex-col items-center justify-center p-8 bg-[#18181b] border border-[#27272a] rounded-xl hover:border-[#38bdf8] transition-all duration-500 hover:-translate-y-1"
               style={{
                 animationDelay: `${index * 100}ms`,
               }}
@@ -106,7 +106,7 @@ export default function Contacts() {
               </span>
 
               {/* Hover indicator */}
-              <div className="absolute top-4 right-4 w-2 h-2 rounded-full bg-[#27272a] group-hover:bg-[#ef4444] transition-colors duration-300" />
+              <div className="absolute top-4 right-4 w-2 h-2 rounded-full bg-[#27272a] group-hover:bg-[#38bdf8] transition-colors duration-300" />
             </a>
           ))}
         </div>
@@ -120,7 +120,7 @@ export default function Contacts() {
           <p className="text-[#52525b] text-sm mb-4">Prefer email?</p>
           <a
             href="mailto:diego.rucci@gmail.com"
-            className="text-2xl sm:text-3xl text-[#fafaf9] hover:text-[#ef4444] transition-colors duration-300"
+            className="text-2xl sm:text-3xl text-[#fafaf9] hover:text-[#38bdf8] transition-colors duration-300"
             style={{ fontFamily: 'Playfair Display, serif' }}
           >
             diego.rucci@gmail.com
@@ -130,7 +130,7 @@ export default function Contacts() {
         {/* Decorative line */}
         <div className="flex items-center justify-center mt-16 gap-8">
           <div className="flex-1 h-px bg-gradient-to-r from-transparent via-[#27272a] to-transparent" />
-          <div className="w-2 h-2 bg-[#ef4444] rounded-full animate-pulse" />
+          <div className="w-2 h-2 bg-[#38bdf8] rounded-full animate-pulse" />
           <div className="flex-1 h-px bg-gradient-to-r from-transparent via-[#27272a] to-transparent" />
         </div>
       </div>

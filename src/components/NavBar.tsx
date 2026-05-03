@@ -47,7 +47,7 @@ export default function NavBar({ sections }: NavBarProps) {
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <div className="flex items-center gap-3">
-            <div className="w-2 h-2 rounded-full bg-[#ef4444] animate-pulse" />
+            <div className="w-2 h-2 rounded-full bg-[#38bdf8] animate-pulse" />
             <span className="text-sm text-[#a1a1aa] tracking-widest uppercase font-mono">
               DR
             </span>
@@ -74,7 +74,7 @@ export default function NavBar({ sections }: NavBarProps) {
                   {section.label}
                 </span>
                 <span
-                  className={`absolute bottom-1 left-5 right-5 h-px bg-[#ef4444] transition-transform duration-300 origin-left ${
+                  className={`absolute bottom-1 left-5 right-5 h-px bg-[#38bdf8] transition-transform duration-300 origin-left ${
                     activeSection === section.id
                       ? 'scale-x-100'
                       : 'scale-x-0 group-hover:scale-x-50'
