@@ -26,13 +26,13 @@ export default function Contacts() {
   }, []);
 
   const contacts: ContactItem[] = [
-    { icon: faMedium, url: 'https://medium.com/@diego.rucci', label: 'Medium', hoverColor: 'hover:bg-[#000]' },
-    { icon: faLinkedin, url: 'https://www.linkedin.com/in/diego-rucci/', label: 'LinkedIn', hoverColor: 'hover:bg-[#0e76a8]' },
-    { icon: faGithub, url: 'https://github.com/ilteoood', label: 'GitHub', hoverColor: 'hover:bg-[#333]' },
-    { icon: faEnvelope, url: 'mailto:diego.rucci@gmail.com', label: 'Email', hoverColor: 'hover:bg-[#ea4335]' },
-    { icon: faTelegram, url: 'https://t.me/iLTeoooD', label: 'Telegram', hoverColor: 'hover:bg-[#0088cc]' },
-    { icon: faFacebook, url: 'https://www.facebook.com/diego.rucci.1/', label: 'Facebook', hoverColor: 'hover:bg-[#3b5998]' },
-    { icon: faInstagram, url: 'https://instagram.com/diego_rucci', label: 'Instagram', hoverColor: 'hover:bg-gradient-to-br hover:from-[#833ab4] hover:via-[#fd1d1d] hover:to-[#fcb045]' },
+    { icon: faMedium, url: 'https://ilteoood.medium.com/', label: 'Medium', hoverColor: 'hover:bg-[#000]' },
+    { icon: faLinkedin, url: 'https://www.linkedin.com/in/ilteoood/', label: 'LinkedIn', hoverColor: 'hover:bg-[#0e76a8]' },
+    { icon: faGithub, url: 'https://github.com/ilteoood/', label: 'GitHub', hoverColor: 'hover:bg-[#333]' },
+    { icon: faEnvelope, url: 'mailto:matteopietro.dazzi@gmail.com', label: 'Email', hoverColor: 'hover:bg-[#ea4335]' },
+    { icon: faTelegram, url: 'https://telegram.me/iLTeoooD', label: 'Telegram', hoverColor: 'hover:bg-[#0088cc]' },
+    { icon: faFacebook, url: 'https://facebook.com/iLTeoooD', label: 'Facebook', hoverColor: 'hover:bg-[#3b5998]' },
+    { icon: faInstagram, url: 'https://www.instagram.com/_ilteoood', label: 'Instagram', hoverColor: 'hover:bg-gradient-to-br hover:from-[#833ab4] hover:via-[#fd1d1d] hover:to-[#fcb045]' },
   ];
 
   return (
@@ -119,11 +119,11 @@ export default function Contacts() {
         >
           <p className="text-[#52525b] text-sm mb-4">Prefer email?</p>
           <a
-            href="mailto:diego.rucci@gmail.com"
+            href="mailto:matteopietro.dazzi@gmail.com"
             className="text-2xl sm:text-3xl text-[#fafaf9] hover:text-[#38bdf8] transition-colors duration-300"
             style={{ fontFamily: 'Playfair Display, serif' }}
           >
-            diego.rucci@gmail.com
+            matteopietro.dazzi@gmail.com
           </a>
         </div>
 
