@@ -95,12 +95,6 @@ export default function Contacts() {
           ))}
         </div>
 
-        {/* Decorative line */}
-        <div className="flex items-center justify-center mt-16 gap-8">
-          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-[#27272a] to-transparent" />
-          <div className="w-2 h-2 bg-[#38bdf8] rounded-full animate-pulse" />
-          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-[#27272a] to-transparent" />
-        </div>
       </div>
     </section>
   );
