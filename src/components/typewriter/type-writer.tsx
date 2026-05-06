@@ -31,7 +31,7 @@ export const TypeWriter: React.FC<TypeProps> = ({loop, content, cssClass}) => {
             options={{
                 loop,
                 wrapperClassName: cssClass || "Typewriter__wrapper",
-                cursorClassName: cssClass ? cssClass + " " + styles.typewriterCursor : styles.typewriterCursor,
+                cursorClassName: cssClass ? cssClass + " " + styles.typewriterCursor : "Typewriter__cursor",
                 delay: 90,
             }}
         />
