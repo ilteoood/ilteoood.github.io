@@ -6,15 +6,30 @@ import {
   faEye,
   faBug,
 } from "@fortawesome/free-solid-svg-icons";
+import ProjectCard from "./ProjectCard.astro";
 
 library.add(faStar, faCodeFork, faEye, faBug);
 
-const icons = {
+const iconSvgs = {
   star: icon(faStar, { classes: "text-yellow-500" }).html,
   fork: icon(faCodeFork, { classes: "text-blue-400" }).html,
   eye: icon(faEye, { classes: "text-green-400" }).html,
   bug: icon(faBug, { classes: "text-red-400" }).html,
 };
+
+const response = await fetch(
+  "https://api.github.com/users/ilteoood/repos?per_page=100",
+);
+const allRepos = await response.json();
+
+const repositories = allRepos
+  .filter((repo: any) => !repo.fork && !repo.archived)
+  .sort(
+    (a: any, b: any) =>
+      new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime(),
+  );
+
+const initialCount = 6;
 ---
 
 <div class="padding-content">
@@ -23,88 +38,65 @@ const icons = {
   </div>
 
   <div id="projects-container" class="flex flex-wrap justify-between">
-    <p class="text-gray-400">Loading projects...</p>
+    {repositories.slice(0, initialCount).map((repo: any) => (
+      <div class="mt-5 w-full md:w-[48%] lg:w-[30%] flex">
+        <ProjectCard
+          name={repo.name}
+          description={repo.description}
+          html_url={repo.html_url}
+          stargazers_count={repo.stargazers_count}
+          forks_count={repo.forks_count}
+          watchers_count={repo.watchers_count}
+          open_issues_count={repo.open_issues_count}
+          icons={iconSvgs}
+        />
+      </div>
+    ))}
   </div>
 
-  <div id="show-more-container" class="hidden justify-center mt-8">
-    <button
-      id="show-more-btn"
-      class="px-6 py-3 bg-gray-700 hover:bg-gray-600 text-gray-50 rounded-lg transition-colors"
-    >
-      Show more
-    </button>
-  </div>
+  {repositories.length > initialCount && (
+    <div id="show-more-container" class="flex justify-center mt-8">
+      <button
+        id="show-more-btn"
+        class="px-6 py-3 bg-gray-700 hover:bg-gray-600 text-gray-50 rounded-lg transition-colors"
+      >
+        Show more
+      </button>
+    </div>
+  )}
+
+  {repositories.length > initialCount && (
+    <div id="additional-projects" class="hidden flex flex-wrap justify-between">
+      {repositories.slice(initialCount).map((repo: any) => (
+        <div class="mt-5 w-full md:w-[48%] lg:w-[30%] flex">
+          <ProjectCard
+            name={repo.name}
+            description={repo.description}
+            html_url={repo.html_url}
+            stargazers_count={repo.stargazers_count}
+            forks_count={repo.forks_count}
+            watchers_count={repo.watchers_count}
+            open_issues_count={repo.open_issues_count}
+            icons={iconSvgs}
+          />
+        </div>
+      ))}
+    </div>
+  )}
 </div>
 
-<script define:vars={{ icons }}>
-  const iconSvgs = icons;
+<script define:vars={{ initialCount: repositories.length }}>
+  const showMoreBtn = document.getElementById("show-more-btn");
+  const additionalProjects = document.getElementById("additional-projects");
+  const showMoreContainer = document.getElementById("show-more-container");
 
-  async function loadProjects() {
-    const response = await fetch(
-      "https://api.github.com/users/ilteoood/repos?per_page=100",
-    );
-    const allRepos = await response.json();
-
-    const repositories = allRepos
-      .filter((repo) => !repo.fork && !repo.archived)
-      .sort(
-        (a, b) =>
-          new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime(),
-      );
-
-    let displayedCount = 6;
-    const container = document.getElementById("projects-container");
-    const showMoreContainer = document.getElementById("show-more-container");
-    const showMoreBtn = document.getElementById("show-more-btn");
-
-    function renderProjects() {
-      container.innerHTML = repositories
-        .slice(0, displayedCount)
-        .map(
-          (repo) => `
-        <div class="mt-5 w-full md:w-[48%] lg:w-[30%] flex">
-          <a href="${repo.html_url}" class="block p-4 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors text-color flex flex-col flex-1">
-            <h3 class="text-xl font-semibold mb-2">${repo.name}</h3>
-            <p class="text-lg italic mb-4 min-h-[3rem] flex-1">${repo.description || "No description"}</p>
-            <div class="flex flex-wrap gap-4 text-sm text-gray-400">
-              <span class="flex items-center gap-1">
-                <svg class="w-4 h-4 fill-current" viewBox="0 0 512 512">${iconSvgs.star}</svg>
-                ${repo.stargazers_count}
-              </span>
-              <span class="flex items-center gap-1">
-                <svg class="w-4 h-4 fill-current" viewBox="0 0 512 512">${iconSvgs.fork}</svg>
-                ${repo.forks_count}
-              </span>
-              <span class="flex items-center gap-1">
-                <svg class="w-4 h-4 fill-current" viewBox="0 0 512 512">${iconSvgs.eye}</svg>
-                ${repo.watchers_count}
-              </span>
-              <span class="flex items-center gap-1">
-                <svg class="w-4 h-4 fill-current" viewBox="0 0 512 512">${iconSvgs.bug}</svg>
-                ${repo.open_issues_count}
-              </span>
-            </div>
-          </a>
-        </div>
-      `,
-        )
-        .join("");
-
-      if (displayedCount < repositories.length) {
-        showMoreContainer.classList.remove("hidden");
-        showMoreContainer.classList.add("flex");
-      } else {
-        showMoreContainer.classList.add("hidden");
-      }
+  showMoreBtn?.addEventListener("click", () => {
+    if (additionalProjects) {
+      additionalProjects.classList.remove("hidden");
+      additionalProjects.classList.add("flex");
     }
-
-    showMoreBtn.addEventListener("click", () => {
-      displayedCount = repositories.length;
-      renderProjects();
-    });
-
-    renderProjects();
-  }
-
-  loadProjects();
+    if (showMoreContainer) {
+      showMoreContainer.classList.add("hidden");
+    }
+  });
 </script>

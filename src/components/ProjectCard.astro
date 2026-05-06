@@ -1,0 +1,42 @@
+---
+interface Props {
+  name: string;
+  description: string | null;
+  html_url: string;
+  stargazers_count: number;
+  forks_count: number;
+  watchers_count: number;
+  open_issues_count: number;
+  icons: {
+    star: string;
+    fork: string;
+    eye: string;
+    bug: string;
+  };
+}
+
+const { name, description, html_url, stargazers_count, forks_count, watchers_count, open_issues_count, icons } = Astro.props;
+---
+
+<a href={html_url} class="block p-4 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors text-color flex flex-col flex-1">
+  <h3 class="text-xl font-semibold mb-2">{name}</h3>
+  <p class="text-lg italic mb-4 min-h-[3rem] flex-1">{description || "No description"}</p>
+  <div class="flex flex-wrap gap-4 text-sm text-gray-400">
+    <span class="flex items-center gap-1">
+      <svg class="w-4 h-4 fill-current" viewBox="0 0 512 512">{icons.star}</svg>
+      {stargazers_count}
+    </span>
+    <span class="flex items-center gap-1">
+      <svg class="w-4 h-4 fill-current" viewBox="0 0 512 512">{icons.fork}</svg>
+      {forks_count}
+    </span>
+    <span class="flex items-center gap-1">
+      <svg class="w-4 h-4 fill-current" viewBox="0 0 512 512">{icons.eye}</svg>
+      {watchers_count}
+    </span>
+    <span class="flex items-center gap-1">
+      <svg class="w-4 h-4 fill-current" viewBox="0 0 512 512">{icons.bug}</svg>
+      {open_issues_count}
+    </span>
+  </div>
+</a>
