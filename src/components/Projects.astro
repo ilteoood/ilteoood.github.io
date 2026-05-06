@@ -38,15 +38,7 @@ const initialCount = 12;
   <div id="projects-container" class="flex flex-wrap justify-between">
     {repositories.map((repo: Repository, index: number) => (
       <div class="mt-5 w-full md:w-[48%] lg:w-[30%] flex" data-extra={index >= initialCount ? "true" : "false"}>
-        <ProjectCard
-          name={repo.name}
-          description={repo.description}
-          html_url={repo.html_url}
-          stargazers_count={repo.stargazers_count}
-          forks_count={repo.forks_count}
-          watchers_count={repo.watchers_count}
-          open_issues_count={repo.open_issues_count}
-        />
+        <ProjectCard project={repo} />
       </div>
     ))}
   </div>
