@@ -1,0 +1,12 @@
+.navbar {
+  transition: background-color 500ms ease-in;
+  @apply z-10 fixed inset-x-0 flex flex-row-reverse w-full;
+}
+
+.navbarScrollStart {
+  @apply bg-gray-900;
+}
+
+.navbarScrolled {
+  @apply bg-gray-900;
+}

@@ -3,7 +3,7 @@ import React from "react";
 import {IconDefinition, IconProp} from "@fortawesome/fontawesome-svg-core";
 import {faFacebook, faGithub, faInstagram, faLinkedin, faMedium, faTelegram} from "@fortawesome/free-brands-svg-icons";
 import {faEnvelope, faSquare, faCircle} from "@fortawesome/free-solid-svg-icons";
-import './contacts.scss';
+import styles from './contacts.module.css';
 
 type BackgroundType = 'circle' | 'square';
 
@@ -63,7 +63,7 @@ export const Contacts: React.FC = () => {
 
     return (
         <>
-            <div className="contacts-container" id="contacts">
+            <div className={styles.contactsContainer} id="contacts">
                 {contacts.map(iconMapper)}
             </div>
             <InstagramGradient/>
