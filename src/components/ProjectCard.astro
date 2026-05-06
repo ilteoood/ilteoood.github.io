@@ -7,6 +7,7 @@ import {
     faStar,
 } from "@fortawesome/free-solid-svg-icons";
 import ProjectStat from "./ProjectStat.astro";
+import { type Repository } from "../types/repository";
 
 library.add(faStar, faCodeFork, faEye, faBug);
 
@@ -18,16 +19,11 @@ const iconSvgs = {
 };
 
 interface Props {
-  name: string;
-  description?: string;
-  html_url: string;
-  stargazers_count: number;
-  forks_count: number;
-  watchers_count: number;
-  open_issues_count: number;
+  project: Repository;
 }
 
-const { name, description = "No description", html_url, stargazers_count, forks_count, watchers_count, open_issues_count } = Astro.props;
+const { project } = Astro.props;
+const { name, description = "No description", html_url, stargazers_count, forks_count, watchers_count, open_issues_count } = project;
 ---
 
 <a href={html_url} class="p-4 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors text-color flex flex-col flex-1">

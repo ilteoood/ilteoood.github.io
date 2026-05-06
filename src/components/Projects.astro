@@ -1,15 +1,16 @@
 ---
 import ProjectCard from "./ProjectCard.astro";
+import { type Repository } from "../types/repository";
 
 const response = await fetch(
   "https://api.github.com/users/ilteoood/repos?per_page=100",
 );
-const allRepos = await response.json();
+const allRepos: Repository[] = await response.json();
 
 const repositories = allRepos
-  .filter((repo: any) => !repo.fork)
+  .filter((repo: Repository) => !repo.fork)
   .sort(
-    (a: any, b: any) =>
+    (a: Repository, b: Repository) =>
       new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime(),
   );
 
@@ -22,17 +23,9 @@ const initialCount = 12;
   </div>
 
   <div id="projects-container" class="flex flex-wrap justify-between">
-    {repositories.map((repo: any, index: number) => (
+    {repositories.map((repo: Repository, index: number) => (
       <div class="mt-5 w-full md:w-[48%] lg:w-[30%] flex" data-extra={index >= initialCount ? "true" : "false"}>
-        <ProjectCard
-          name={repo.name}
-          description={repo.description}
-          html_url={repo.html_url}
-          stargazers_count={repo.stargazers_count}
-          forks_count={repo.forks_count}
-          watchers_count={repo.watchers_count}
-          open_issues_count={repo.open_issues_count}
-        />
+        <ProjectCard project={repo} />
       </div>
     ))}
   </div>
