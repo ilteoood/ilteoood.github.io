@@ -1,24 +1,5 @@
 ---
-import Typewriter from 'typewriter-effect';
-
-const content = [
-  { content: 'Software engineer', delay: 1500, deleteAll: true },
-  { content: 'Tech enthusiast', delay: 1500, deleteAll: true },
-  { content: 'Music addicted', delay: 1500, deleteAll: true },
-];
+import Typewriter from "astro-typewriter";
 ---
 
-<div id="typewriter-container" class="text-center"></div>
-
-<script define:vars={{ content }}>
-  import('typewriter-effect').then((module) => {
-    const Typewriter = module.default;
-    const typewriter = new Typewriter('#typewriter-container', {
-      strings: content.map(c => c.content),
-      autoStart: true,
-      loop: true,
-      delay: content[0]?.delay || 50,
-      deleteSpeed: 30,
-    });
-  });
-</script>
+<Typewriter messages={["Software engineer", "Tech enthusiast", "Music addicted"]} style={{ fontSize: "20vh", fontWeight: "bold" }} />
