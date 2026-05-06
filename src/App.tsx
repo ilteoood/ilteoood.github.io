@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './App.scss';
 
 import {Introduction} from "./sections/introduction/introduction";
@@ -10,15 +10,6 @@ import {Projects} from "./sections/projects/projects";
 import {MadeWith} from "./sections/made-with/made-with";
 
 function App() {
-    useEffect(() => {
-        const hash = window.location.hash;
-        if (hash) {
-            const element = document.querySelector(hash);
-            if (element) {
-                element.scrollIntoView({ behavior: 'smooth' });
-            }
-        }
-    }, []);
 
     return (
         <div className="App">
