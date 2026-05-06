@@ -13,7 +13,8 @@ const { sections } = Astro.props;
         {sections.map((section) => (
           <a
             href={`#${section.id}`}
-            class="text-gray-50 hover:text-gray-200 transition-colors duration-200 text-sm font-medium"
+            class="nav-link text-gray-50 hover:text-gray-200 transition-colors duration-200 text-sm font-medium"
+            data-section={section.id}
           >
             {section.label}
           </a>
@@ -22,6 +23,27 @@ const { sections } = Astro.props;
     </div>
   </div>
 </nav>
+
+<style>
+  .nav-link {
+    position: relative;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: currentColor;
+    transition: width 0.3s ease;
+  }
+
+  .nav-link.active::after {
+    width: 100%;
+  }
+</style>
 
 <script>
   const navbar = document.getElementById('navbar');
@@ -39,5 +61,19 @@ const { sections } = Astro.props;
     }
   };
 
+  const updateActiveLink = () => {
+    const hash = window.location.hash.slice(1);
+    document.querySelectorAll('.nav-link').forEach(link => {
+      const sectionId = link.getAttribute('data-section');
+      if (sectionId === hash) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+  };
+
   window.addEventListener('scroll', handleScroll);
+  window.addEventListener('hashchange', updateActiveLink);
+  updateActiveLink();
 </script>
