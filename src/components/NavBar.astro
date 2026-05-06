@@ -1,0 +1,43 @@
+---
+interface Props {
+  sections: { id: string; label: string }[];
+}
+
+const { sections } = Astro.props;
+---
+
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-center h-16">
+      <div class="flex space-x-8">
+        {sections.map((section) => (
+          <a
+            href={`#${section.id}`}
+            class="text-gray-50 hover:text-gray-200 transition-colors duration-200 text-sm font-medium"
+          >
+            {section.label}
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const navbar = document.getElementById('navbar');
+  let scrolled = false;
+
+  const handleScroll = () => {
+    if (window.scrollY > 150 && !scrolled) {
+      navbar?.classList.add('bg-gray-900', 'shadow-lg');
+      navbar?.classList.remove('bg-transparent');
+      scrolled = true;
+    } else if (window.scrollY <= 150 && scrolled) {
+      navbar?.classList.remove('bg-gray-900', 'shadow-lg');
+      navbar?.classList.add('bg-transparent');
+      scrolled = false;
+    }
+  };
+
+  window.addEventListener('scroll', handleScroll);
+</script>
