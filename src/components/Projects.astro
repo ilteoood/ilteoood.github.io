@@ -1,21 +1,5 @@
 ---
-import { library, icon } from "@fortawesome/fontawesome-svg-core";
-import {
-  faStar,
-  faCodeFork,
-  faEye,
-  faBug,
-} from "@fortawesome/free-solid-svg-icons";
 import ProjectCard from "./ProjectCard.astro";
-
-library.add(faStar, faCodeFork, faEye, faBug);
-
-const iconSvgs = {
-  star: icon(faStar, { classes: "text-yellow-500" }).html,
-  fork: icon(faCodeFork, { classes: "text-blue-400" }).html,
-  eye: icon(faEye, { classes: "text-green-400" }).html,
-  bug: icon(faBug, { classes: "text-red-400" }).html,
-};
 
 const response = await fetch(
   "https://api.github.com/users/ilteoood/repos?per_page=100",
@@ -38,8 +22,8 @@ const initialCount = 6;
   </div>
 
   <div id="projects-container" class="flex flex-wrap justify-between">
-    {repositories.slice(0, initialCount).map((repo: any) => (
-      <div class="mt-5 w-full md:w-[48%] lg:w-[30%] flex">
+    {repositories.map((repo: any, index: number) => (
+      <div class="mt-5 w-full md:w-[48%] lg:w-[30%] flex" data-extra={index >= initialCount ? "true" : "false"}>
         <ProjectCard
           name={repo.name}
           description={repo.description}
@@ -48,7 +32,6 @@ const initialCount = 6;
           forks_count={repo.forks_count}
           watchers_count={repo.watchers_count}
           open_issues_count={repo.open_issues_count}
-          icons={iconSvgs}
         />
       </div>
     ))}
@@ -64,39 +47,24 @@ const initialCount = 6;
       </button>
     </div>
   )}
-
-  {repositories.length > initialCount && (
-    <div id="additional-projects" class="hidden flex flex-wrap justify-between">
-      {repositories.slice(initialCount).map((repo: any) => (
-        <div class="mt-5 w-full md:w-[48%] lg:w-[30%] flex">
-          <ProjectCard
-            name={repo.name}
-            description={repo.description}
-            html_url={repo.html_url}
-            stargazers_count={repo.stargazers_count}
-            forks_count={repo.forks_count}
-            watchers_count={repo.watchers_count}
-            open_issues_count={repo.open_issues_count}
-            icons={iconSvgs}
-          />
-        </div>
-      ))}
-    </div>
-  )}
 </div>
 
-<script define:vars={{ initialCount: repositories.length }}>
+<style>
+  [data-extra="true"] {
+    display: none;
+  }
+</style>
+
+<script>
   const showMoreBtn = document.getElementById("show-more-btn");
-  const additionalProjects = document.getElementById("additional-projects");
   const showMoreContainer = document.getElementById("show-more-container");
 
   showMoreBtn?.addEventListener("click", () => {
-    if (additionalProjects) {
-      additionalProjects.classList.remove("hidden");
-      additionalProjects.classList.add("flex");
-    }
+    document.querySelectorAll('[data-extra="true"]').forEach((el) => {
+      (el as HTMLElement).style.display = "flex";
+    });
     if (showMoreContainer) {
-      showMoreContainer.classList.add("hidden");
+      showMoreContainer.style.display = "none";
     }
   });
 </script>
