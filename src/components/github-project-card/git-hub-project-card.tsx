@@ -2,7 +2,7 @@ import {Repository} from "../../services/github.service";
 import React from "react";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCodeBranch, faExclamationCircle, faEye, faStar} from "@fortawesome/free-solid-svg-icons";
-import './github-project-card.scss';
+import styles from './github-project-card.module.css';
 
 export interface GithubProjectCardProp {
     repository: Repository
@@ -10,20 +10,20 @@ export interface GithubProjectCardProp {
 
 export const GitHubProjectCard: React.FC<GithubProjectCardProp> = ({repository}) => {
     return (
-        <div className="project-card-container text-color">
+        <div className={`${styles.projectCardContainer} text-color`}>
             <div className="flex flex-col flex-grow">
                 <a className="mr-4" href={repository.html_url}>{repository.name}</a>
                 <p className="text-lg italic">{repository.description}</p>
             </div>
             <div className="flex flex-row">
                 {repository.forks_count}
-                <FontAwesomeIcon className="project-card-icon" icon={faCodeBranch}/>
+                <FontAwesomeIcon className={styles.projectCardIcon} icon={faCodeBranch}/>
                 {repository.stargazers_count}
-                <FontAwesomeIcon className="project-card-icon" icon={faStar}/>
+                <FontAwesomeIcon className={styles.projectCardIcon} icon={faStar}/>
                 {repository.watchers_count}
-                <FontAwesomeIcon className="project-card-icon" icon={faEye}/>
+                <FontAwesomeIcon className={styles.projectCardIcon} icon={faEye}/>
                 {repository.open_issues_count}
-                <FontAwesomeIcon className="project-card-icon" icon={faExclamationCircle}/>
+                <FontAwesomeIcon className={styles.projectCardIcon} icon={faExclamationCircle}/>
             </div>
         </div>
     );

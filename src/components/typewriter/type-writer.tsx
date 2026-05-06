@@ -1,7 +1,6 @@
 import React from "react";
-
 import Typewriter, {TypewriterClass} from "typewriter-effect";
-import './type-writer.scss';
+import styles from './type-writer.module.css';
 
 export interface TypeProps {
     loop?: boolean;
@@ -32,7 +31,7 @@ export const TypeWriter: React.FC<TypeProps> = ({loop, content, cssClass}) => {
             options={{
                 loop,
                 wrapperClassName: cssClass || "Typewriter__wrapper",
-                cursorClassName: cssClass ? cssClass + " typewriter-cursor" : "Typewriter__cursor",
+                cursorClassName: cssClass ? cssClass + " " + styles.typewriterCursor : styles.typewriterCursor,
                 delay: 90,
             }}
         />

@@ -1,6 +1,6 @@
 import React from "react";
 import {TypeContent, TypeWriter} from "../../components/typewriter/type-writer";
-import './describe-me.scss';
+import styles from './describe-me.module.css';
 
 export const DescribeMe: React.FC = () => {
 
@@ -12,7 +12,7 @@ export const DescribeMe: React.FC = () => {
 
     return (
         <div className="flex place-content-center pt-20 md:pt-40 xl:pt-60">
-            <TypeWriter loop={true} content={typeContent} cssClass="describe-me-typewriter"/>
+            <TypeWriter loop={true} content={typeContent} cssClass={styles.describeMeTypewriter}/>
         </div>
     );
 

@@ -1,0 +1,7 @@
+.sectionTitleTypewriter {
+  @apply text-gray-50 text-2xl sm:text-4xl xl:text-6xl;
+}
+
+.sectionTitlePadding {
+  @apply pt-5 md:pt-10 xl:pt-14 pb-2 md:pb-5 xl:pb-7;
+}
