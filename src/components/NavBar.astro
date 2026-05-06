@@ -62,7 +62,7 @@ const { sections } = Astro.props;
   };
 
   const updateActiveLink = () => {
-    const hash = window.location.hash.slice(1) || 'introduction';
+    const hash = window.location.hash.slice(1);
     document.querySelectorAll('.nav-link').forEach(link => {
       const sectionId = link.getAttribute('data-section');
       if (sectionId === hash) {
