@@ -1,0 +1,15 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["import", "typescript", "oxc", "unicorn"],
+  "jsPlugins": [
+    { "name": "astro", "specifier": "./node_modules/eslint-plugin-astro/lib/index.js" },
+    { "name": "tailwindcss", "specifier": "./node_modules/eslint-plugin-tailwindcss/lib/index.js" }
+  ],
+  "rules": {
+    "no-console": "warn",
+    "no-debugger": "warn",
+    "astro/no-unused-define-vars-in-style": "warn",
+    "tailwindcss/no-contradicting-classname": "error",
+    "tailwindcss/classnames-order": "warn"
+  }
+}
