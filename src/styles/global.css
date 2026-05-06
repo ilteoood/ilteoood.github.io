@@ -20,15 +20,10 @@ body {
   font-family: system-ui, -apple-system, sans-serif;
 }
 
-.typewriter-cursor {
-  animation: blink 1s step-end infinite;
+.padding-content {
+  @apply px-10 md:px-20 xl:px-40 py-8;
 }
 
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
-}
-
-.navbar-scrolled {
-  background-color: var(--color-navbar);
+.text-color {
+  @apply text-gray-300;
 }

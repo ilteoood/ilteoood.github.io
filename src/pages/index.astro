@@ -1,12 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import NavBar from '../components/NavBar';
-import DescribeMe from '../components/sections/DescribeMe';
-import Introduction from '../components/sections/Introduction';
-import AboutMe from '../components/sections/AboutMe';
-import Projects from '../components/sections/Projects';
-import Contacts from '../components/sections/Contacts';
-import MadeWith from '../components/sections/MadeWith';
+import NavBar from '../components/NavBar.astro';
+import DescribeMe from '../components/DescribeMe.astro';
+import Introduction from '../components/Introduction.astro';
+import AboutMe from '../components/AboutMe.astro';
+import Projects from '../components/Projects.astro';
+import Contacts from '../components/Contacts.astro';
+import MadeWith from '../components/MadeWith.astro';
 
 const sections = [
   { id: 'about-me', label: 'About Me' },
@@ -16,13 +16,13 @@ const sections = [
 ---
 
 <Layout title="Matteo Pietro Dazzi - Staff Software Developer">
-  <NavBar client:load sections={sections} />
+  <NavBar sections={sections} />
   <main>
-    <DescribeMe client:load />
-    <Introduction client:load />
-    <AboutMe client:load />
-    <Projects client:load />
-    <Contacts client:load />
+    <DescribeMe />
+    <Introduction />
+    <AboutMe />
+    <Projects />
+    <Contacts />
   </main>
-  <MadeWith client:visible />
+  <MadeWith />
 </Layout>

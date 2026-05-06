@@ -1,7 +1,0 @@
-.heartIcon {
-  @apply mx-2 mt-1.5 text-red-600;
-}
-
-.reactIcon {
-  @apply ml-2 mt-1.5 text-blue-400;
-}

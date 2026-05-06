@@ -1,7 +1,0 @@
-.projectCardIcon {
-  @apply ml-2 mr-4 xl:mt-2 mt-1 text-lg;
-}
-
-.projectCardContainer {
-  @apply flex flex-col w-80 min-h-full;
-}

@@ -1,0 +1,67 @@
+---
+import { library, icon } from '@fortawesome/fontawesome-svg-core';
+import { faMedium, faLinkedin, faGithub, faTelegram, faFacebook, faInstagram, faEnvelope } from '@fortawesome/free-brands-svg-icons';
+import { faSquareEnvelope } from '@fortawesome/free-solid-svg-icons';
+
+library.add(faMedium, faLinkedin, faGithub, faTelegram, faFacebook, faInstagram, faSquareEnvelope);
+
+const iconDefs: Record<string, any> = {
+  medium: faMedium,
+  linkedin: faLinkedin,
+  github: faGithub,
+  email: faSquareEnvelope,
+  telegram: faTelegram,
+  facebook: faFacebook,
+  instagram: faInstagram,
+};
+
+const contacts = [
+  { iconKey: 'medium', link: 'https://ilteoood.medium.com/', background: '#000000', hoverBackground: '#ffffff' },
+  { iconKey: 'linkedin', link: 'https://www.linkedin.com/in/ilteoood/', background: '#0A66C2', hoverBackground: '#ffffff' },
+  { iconKey: 'github', link: 'https://github.com/ilteoood/', background: '#333333', hoverBackground: '#ffffff' },
+  { iconKey: 'email', link: 'mailto:matteopietro.dazzi@gmail.com', background: '#EA4335', hoverBackground: '#ffffff' },
+  { iconKey: 'telegram', link: 'https://telegram.me/iLTeoooD', background: '#0088CC', hoverBackground: '#ffffff' },
+  { iconKey: 'facebook', link: 'https://facebook.com/iLTeoooD', background: '#1877F2', hoverBackground: '#ffffff' },
+  { iconKey: 'instagram', link: 'https://www.instagram.com/_ilteoood', background: 'linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)', hoverBackground: '#ffffff' },
+];
+
+const iconSvgs = contacts.map(c => ({
+  html: icon(iconDefs[c.iconKey]).html,
+  link: c.link,
+  background: c.background,
+  hoverBackground: c.hoverBackground,
+}));
+---
+
+<div id="contacts" class="flex flex-wrap justify-center gap-4 py-8">
+  {iconSvgs.map((contact, index) => (
+    <a
+      id={`contact-${index}`}
+      class="w-10 h-10 flex items-center justify-center rounded-full transition-all duration-300 hover:scale-110"
+      href={contact.link}
+      target="_blank"
+      rel="noopener noreferrer"
+      style={`background: ${contact.background}; --hover-bg: ${contact.hoverBackground};`}
+      aria-label={contact.link}
+    >
+      <svg viewBox="0 0 512 512" class="w-5 h-5 fill-current text-white" set:html={contact.html} />
+    </a>
+  ))}
+</div>
+
+<svg width="0" height="0" style="position: absolute;">
+  <radialGradient id="instagradient" r="150%" cx="30%" cy="107%">
+    <stop stop-color="#fdf497" offset="0"/>
+    <stop stop-color="#fdf497" offset="0.05"/>
+    <stop stop-color="#fd5949" offset="0.45"/>
+    <stop stop-color="#d6249f" offset="0.6"/>
+    <stop stop-color="#285AEB" offset="0.9"/>
+  </radialGradient>
+</svg>
+
+<style>
+  a:hover {
+    background: var(--hover-bg) !important;
+    color: #333333;
+  }
+</style>
