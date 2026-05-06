@@ -36,7 +36,7 @@ export default function NavBar({ sections }: NavBarProps) {
               <button
                 key={section.id}
                 onClick={() => scrollToSection(section.id)}
-                className="text-gray-50 hover:text-gray-200 transition-colors duration-200 text-sm font-medium"
+                className="text-gray-50 hover:text-gray-200 transition-colors duration-200 text-sm font-medium cursor-pointer"
               >
                 {section.label}
               </button>
