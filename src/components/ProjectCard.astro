@@ -1,11 +1,12 @@
 ---
-import { library, icon } from "@fortawesome/fontawesome-svg-core";
+import { icon, library } from "@fortawesome/fontawesome-svg-core";
 import {
-  faStar,
-  faCodeFork,
-  faEye,
-  faBug,
+    faBug,
+    faCodeFork,
+    faEye,
+    faStar,
 } from "@fortawesome/free-solid-svg-icons";
+import ProjectStat from "./ProjectStat.astro";
 
 library.add(faStar, faCodeFork, faEye, faBug);
 
@@ -29,25 +30,13 @@ interface Props {
 const { name, description = "No description", html_url, stargazers_count, forks_count, watchers_count, open_issues_count } = Astro.props;
 ---
 
-<a href={html_url} class="block p-4 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors text-color flex flex-col flex-1">
+<a href={html_url} class="p-4 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors text-color flex flex-col flex-1">
   <h3 class="text-xl font-semibold mb-2">{name}</h3>
   <p class="text-lg italic mb-4 min-h-[3rem] flex-1">{description}</p>
   <div class="flex flex-wrap gap-4 text-sm text-gray-400">
-    <span class="flex items-center gap-1">
-      <svg class="w-4 h-4 fill-current" viewBox="0 0 512 512">{iconSvgs.star}</svg>
-      {stargazers_count}
-    </span>
-    <span class="flex items-center gap-1">
-      <svg class="w-4 h-4 fill-current" viewBox="0 0 512 512">{iconSvgs.fork}</svg>
-      {forks_count}
-    </span>
-    <span class="flex items-center gap-1">
-      <svg class="w-4 h-4 fill-current" viewBox="0 0 512 512">{iconSvgs.eye}</svg>
-      {watchers_count}
-    </span>
-    <span class="flex items-center gap-1">
-      <svg class="w-4 h-4 fill-current" viewBox="0 0 512 512">{iconSvgs.bug}</svg>
-      {open_issues_count}
-    </span>
+    <ProjectStat value={stargazers_count} icon={iconSvgs.star} />
+    <ProjectStat value={forks_count} icon={iconSvgs.fork} />
+    <ProjectStat value={watchers_count} icon={iconSvgs.eye} />
+    <ProjectStat value={open_issues_count} icon={iconSvgs.bug} />
   </div>
 </a>
