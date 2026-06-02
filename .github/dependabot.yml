@@ -1,7 +1,33 @@
 version: 2
+
 updates:
   - package-ecosystem: 'npm'
     directory: '/'
     schedule:
       interval: 'daily'
     open-pull-requests-limit: 10
+    labels:
+      - 'dependencies'
+      - 'javascript'
+    groups:
+      oxc-tooling:
+        patterns:
+          - 'oxlint'
+          - 'oxlint-plugin-eslint'
+          - 'oxfmt'
+      fontawesome:
+        patterns:
+          - '@fortawesome/*'
+      tailwind:
+        patterns:
+          - 'tailwindcss'
+          - '@tailwindcss/*'
+      astro-stack:
+        patterns:
+          - 'astro'
+          - 'astro-typewriter'
+      dev-deps:
+        dependency-type: 'development'
+        update-types:
+          - 'minor'
+          - 'patch'
