@@ -2,8 +2,8 @@
   "$schema": "./node_modules/oxlint/configuration_schema.json",
   "plugins": ["import", "typescript", "oxc", "unicorn"],
   "jsPlugins": [
-    { "name": "astro", "specifier": "./node_modules/eslint-plugin-astro/lib/index.js" },
-    { "name": "tailwindcss", "specifier": "./node_modules/eslint-plugin-tailwindcss/lib/index.js" }
+    { "name": "astro", "specifier": "./node_modules/eslint-plugin-astro/lib/index.mjs" },
+    { "name": "tailwindcss", "specifier": "./node_modules/eslint-plugin-tailwindcss/lib/index.mjs" }
   ],
   "rules": {
     "no-console": "warn",
