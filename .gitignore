@@ -24,3 +24,5 @@ yarn-error.log*
 .idea
 .idea/**
 .tokensave
+.astro/dev.json
+.astro/dev.log
