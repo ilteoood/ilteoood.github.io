@@ -7,7 +7,7 @@ interface Props {
 const { value, icon } = Astro.props;
 ---
 
-<span class="flex items-center gap-1">
-  <svg class="w-4 h-4 fill-current" viewBox="0 0 512 512" set:html={icon} />
-  {value}
+<span class="inline-flex items-center gap-1.5">
+  <svg class="h-3 w-3 fill-current text-accent" viewBox="0 0 512 512" set:html={icon} />
+  <span class="tabular-nums">{value}</span>
 </span>

@@ -1,21 +1,21 @@
 ---
-import { icon, library } from "@fortawesome/fontawesome-svg-core";
+import { icon, library } from '@fortawesome/fontawesome-svg-core';
 import {
-    faBug,
-    faCodeFork,
-    faEye,
-    faStar,
-} from "@fortawesome/free-solid-svg-icons";
-import ProjectStat from "./ProjectStat.astro";
-import { type Repository } from "../types/repository";
+  faBug,
+  faCodeFork,
+  faEye,
+  faStar,
+} from '@fortawesome/free-solid-svg-icons';
+import ProjectStat from './ProjectStat.astro';
+import { type Repository } from '../types/repository';
 
 library.add(faStar, faCodeFork, faEye, faBug);
 
 const iconSvgs = {
-  star: icon(faStar, { classes: "text-yellow-500" }).html,
-  fork: icon(faCodeFork, { classes: "text-blue-400" }).html,
-  eye: icon(faEye, { classes: "text-green-400" }).html,
-  bug: icon(faBug, { classes: "text-red-400" }).html,
+  star: icon(faStar).html,
+  fork: icon(faCodeFork).html,
+  eye: icon(faEye).html,
+  bug: icon(faBug).html,
 };
 
 interface Props {
@@ -23,13 +23,53 @@ interface Props {
 }
 
 const { project } = Astro.props;
-const { name, description = "No description", html_url, stargazers_count, forks_count, watchers_count, open_issues_count } = project;
+const {
+  name,
+  description = 'No description',
+  html_url,
+  stargazers_count,
+  forks_count,
+  watchers_count,
+  open_issues_count,
+  updated_at,
+} = project;
+
+const updatedDate = new Date(updated_at);
+const updatedRel = formatRelative(updatedDate);
+const commitHash = name.split('').reduce((a, c) => (a + c.charCodeAt(0)) % 0xffff, 0).toString(16).padStart(4, '0');
+
+function formatRelative(date: Date): string {
+  const diffMs = Date.now() - date.getTime();
+  const days = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+  if (days < 1) return 'today';
+  if (days < 2) return 'yesterday';
+  if (days < 30) return `${days}d ago`;
+  if (days < 365) return `${Math.floor(days / 30)}mo ago`;
+  return `${Math.floor(days / 365)}y ago`;
+}
 ---
 
-<a href={html_url} class="p-4 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors text-color flex flex-col flex-1">
-  <h3 class="text-xl font-semibold mb-2">{name}</h3>
-  <p class="text-lg italic mb-4 min-h-[3rem] flex-1">{description}</p>
-  <div class="flex flex-wrap gap-4 text-sm text-gray-400">
+<a
+  href={html_url}
+  class="group grid grid-cols-[6rem,1fr,auto] items-baseline gap-4 border-b border-rule px-3 py-4 transition-colors hover:bg-panel md:grid-cols-[8rem,1fr,auto] md:gap-6 md:px-4 md:py-5"
+  rel="noopener noreferrer"
+>
+  <div class="font-mono text-xs text-muted md:text-sm">
+    <span class="text-accent">●</span>
+    <span class="ml-2">{commitHash}</span>
+  </div>
+  <div class="min-w-0">
+    <h3 class="truncate font-mono text-base text-text group-hover:text-accent md:text-lg">
+      ./<span class="font-semibold">{name}</span>
+    </h3>
+    <p class="mt-1 line-clamp-1 font-body text-sm text-muted md:text-base">
+      {description}
+    </p>
+  </div>
+  <div class="hidden font-mono text-xs text-muted md:block md:text-right">
+    <span class="text-accent">↑</span> {updatedRel}
+  </div>
+  <div class="col-span-3 mt-2 flex flex-wrap gap-3 font-mono text-xs text-muted md:col-span-3 md:mt-0 md:justify-end md:text-sm">
     <ProjectStat value={stargazers_count} icon={iconSvgs.star} />
     <ProjectStat value={forks_count} icon={iconSvgs.fork} />
     <ProjectStat value={watchers_count} icon={iconSvgs.eye} />

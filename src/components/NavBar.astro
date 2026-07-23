@@ -4,76 +4,81 @@ interface Props {
 }
 
 const { sections } = Astro.props;
+const navItems = [
+  { id: 'about-me', label: 'about.me' },
+  { id: 'projects', label: 'projects' },
+  { id: 'contacts', label: 'contacts' },
+];
 ---
 
-<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-center h-16">
-      <div class="flex space-x-8">
-        {sections.map((section) => (
-          <a
-            href={`#${section.id}`}
-            class="nav-link text-gray-50 hover:text-gray-200 transition-colors duration-200 text-sm font-medium"
-            data-section={section.id}
-          >
-            {section.label}
-          </a>
-        ))}
-      </div>
+<nav
+  id="navbar"
+  class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent"
+  aria-label="Primary"
+>
+  <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 md:px-12">
+    <a href="#describe-me" class="font-mono text-sm font-semibold text-text hover:text-accent">
+      <span class="text-accent">~$</span> ilteoood
+    </a>
+    <div class="flex items-center gap-6 md:gap-8">
+      {sections.map((section) => (
+        <a
+          href={`#${section.id}`}
+          class="nav-link font-mono text-xs text-muted transition-colors duration-200 hover:text-text md:text-sm"
+          data-section={section.id}
+        >
+          <span class="prompt-mark text-accent opacity-0 transition-opacity duration-200">&gt;</span>
+          <span class="ml-1">{section.label}</span>
+        </a>
+      ))}
     </div>
   </div>
+  <div class="divider mx-auto max-w-6xl opacity-0 transition-opacity duration-300" id="navbar-rule"></div>
 </nav>
 
 <style>
-  .nav-link {
-    position: relative;
+  .nav-link.active .prompt-mark {
+    opacity: 1;
   }
 
-  .nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: currentColor;
-    transition: width 0.3s ease;
-  }
-
-  .nav-link.active::after {
-    width: 100%;
+  .nav-link.active {
+    color: var(--color-text);
   }
 </style>
 
 <script>
   const navbar = document.getElementById('navbar');
+  const rule = document.getElementById('navbar-rule');
+  const navLinks = document.querySelectorAll<HTMLAnchorElement>('.nav-link');
   let scrolled = false;
 
   const handleScroll = () => {
-    if (window.scrollY > 150 && !scrolled) {
-      navbar?.classList.add('bg-gray-900', 'shadow-lg');
+    if (window.scrollY > 40 && !scrolled) {
+      navbar?.classList.add('bg-background/80', 'backdrop-blur-md');
       navbar?.classList.remove('bg-transparent');
+      rule?.classList.add('opacity-100');
       scrolled = true;
-    } else if (window.scrollY <= 150 && scrolled) {
-      navbar?.classList.remove('bg-gray-900', 'shadow-lg');
+    } else if (window.scrollY <= 40 && scrolled) {
+      navbar?.classList.remove('bg-background/80', 'backdrop-blur-md');
       navbar?.classList.add('bg-transparent');
+      rule?.classList.remove('opacity-100');
       scrolled = false;
     }
   };
 
+  let activeId = '';
   const updateActiveLink = () => {
     const hash = window.location.hash.slice(1);
-    document.querySelectorAll('.nav-link').forEach(link => {
+    if (hash === activeId) return;
+    activeId = hash;
+    navLinks.forEach((link) => {
       const sectionId = link.getAttribute('data-section');
-      if (sectionId === hash) {
-        link.classList.add('active');
-      } else {
-        link.classList.remove('active');
-      }
+      link.classList.toggle('active', sectionId === hash);
     });
   };
 
-  window.addEventListener('scroll', handleScroll);
+  window.addEventListener('scroll', handleScroll, { passive: true });
   window.addEventListener('hashchange', updateActiveLink);
   updateActiveLink();
+  handleScroll();
 </script>

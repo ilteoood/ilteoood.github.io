@@ -2,11 +2,21 @@
 interface Props {
   title: string;
   sectionId: string;
+  number?: string;
 }
 
-const { title, sectionId } = Astro.props;
+const { title, sectionId, number } = Astro.props;
 ---
 
-<div class="pt-5 md:pt-10 xl:pt-14 pb-2 md:pb-5 xl:pb-7" id={sectionId}>
-  <h2 class="text-gray-50 text-2xl sm:text-4xl xl:text-6xl">{title}</h2>
-</div>
+<header id={sectionId} class="divider pt-10 md:pt-16">
+  <div class="flex items-baseline gap-4">
+    {number && (
+      <span class="font-mono text-sm text-muted md:text-base">
+        <span class="text-accent">//</span> {number}
+      </span>
+    )}
+    <h2 class="font-mono text-2xl font-semibold text-text sm:text-3xl md:text-4xl">
+      <span class="text-accent">.</span>/{title}
+    </h2>
+  </div>
+</header>

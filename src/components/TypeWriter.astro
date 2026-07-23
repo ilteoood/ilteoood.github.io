@@ -1,5 +1,13 @@
 ---
-import Typewriter from "astro-typewriter";
+import Typewriter from 'astro-typewriter';
 ---
 
-<Typewriter messages={["Software engineer", "Tech enthusiast", "Music addicted"]} style={{ fontSize: "clamp(2rem, 8vw, 10rem)", fontWeight: "bold" }} />
+<Typewriter
+  messages={['Software engineer', 'Tech enthusiast', 'Music addicted']}
+  style={{
+    fontFamily: 'var(--font-mono)',
+    fontSize: 'clamp(1.125rem, 2.4vw, 1.5rem)',
+    fontWeight: '500',
+    color: 'var(--color-text)',
+  }}
+/>
