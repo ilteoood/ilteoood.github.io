@@ -2,8 +2,44 @@
 import TypeWriter from '../components/TypeWriter.astro';
 ---
 
-<section id="describe-me" class="min-h-screen flex items-center justify-center px-10 md:px-20 xl:px-40 pt-14">
-  <div class="text-center">
-    <TypeWriter />
+<section
+  id="describe-me"
+  class="relative flex min-h-screen items-center px-6 pt-24 md:px-12 md:pt-32 xl:px-24"
+>
+  <div class="mx-auto w-full max-w-6xl">
+    <p class="eyebrow mb-6 md:mb-8">
+      <span class="text-accent">~/</span>portfolio<span class="text-muted"> · readme.md</span>
+    </p>
+
+    <div class="reveal">
+      <h1 class="font-mono text-[clamp(2.25rem,7vw,5.5rem)] font-bold leading-[1.05] tracking-tight">
+        <span class="text-muted">$</span> whoami<br />
+        <span class="text-accent glow">Matteo Pietro Dazzi</span><span class="cursor-blink"></span>
+      </h1>
+    </div>
+
+    <div class="reveal mt-6 md:mt-8">
+      <p class="font-mono text-base text-muted md:text-lg">// role</p>
+      <div class="mt-2 font-mono text-xl text-text md:text-2xl">
+        <TypeWriter />
+      </div>
+    </div>
+
+    <div class="reveal mt-10 md:mt-14 grid gap-6 md:grid-cols-3">
+      <div class="divider pt-4">
+        <p class="font-mono text-xs uppercase tracking-widest text-muted">Based in</p>
+        <p class="mt-2 font-mono text-base text-text">Milan, IT</p>
+      </div>
+      <div class="divider pt-4">
+        <p class="font-mono text-xs uppercase tracking-widest text-muted">Currently at</p>
+        <p class="mt-2 font-mono text-base text-text">
+          <a href="https://www.nearform.com/" rel="noopener noreferrer">Nearform</a>
+        </p>
+      </div>
+      <div class="divider pt-4">
+        <p class="font-mono text-xs uppercase tracking-widest text-muted">log(years) ≥</p>
+        <p class="mt-2 font-mono text-base text-text">15</p>
+      </div>
+    </div>
   </div>
 </section>

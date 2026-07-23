@@ -1,30 +1,68 @@
 ---
 import SectionTitle from '../components/SectionTitle.astro';
+
+const entries = [
+  { year: 'lifetime', body: 'lifetime' },
+  { year: '2007', body: 'twelve' },
+  { year: '2016.10', body: 'graduate' },
+  { year: 'now', body: 'now' },
+  { year: 'next', body: 'next' },
+];
 ---
 
-<div class="padding-content">
-  <SectionTitle title="About me" sectionId="about-me"/>
-  <div class="flex flex-col text-color text-lg">
-    <div class="py-1">
-      Since I remember it, computers are an integral part of my life: first as a leisure tool, then as a
-      learning tool.
-    </div>
-    <div class="py-1">
-      I have been studying programming since I was 12 years old: I started as a self-taught and deepened
-      my
-      knowledge during my studies.
-    </div>
-    <div class="py-1">
-      I'm graduated at{' '}
-      <a href="https://www.unimi.it/"> Università degli Studi di Milano</a>, on October 2016.
-    </div>
-    <div class="py-1">
-      Currently I'm working for{' '}
-      <a href="https://www.nearform.com/"> Nearform</a>.
-    </div>
-    <div class="py-1">
-      Want to know more? Keep <a href="#contacts">in touch</a> or take a look to my{' '}
-      <a href="https://github.com/ilteoood/resume/raw/main/main.pdf"> resume</a>!
+<section class="padding-content">
+  <div class="mx-auto max-w-3xl">
+    <SectionTitle title="about" sectionId="about-me" number="01" />
+
+    <div class="mt-10 space-y-1 md:mt-14">
+      <div class="reveal grid grid-cols-[5rem,1fr] gap-4 py-3 md:grid-cols-[7rem,1fr] md:gap-6">
+        <div class="font-mono text-xs text-muted md:text-sm">
+          <span class="text-accent">~$</span> lifetime
+        </div>
+        <div class="font-body text-base leading-relaxed text-text md:text-lg">
+          Since I remember it, computers are an integral part of my life: first as a leisure tool, then
+          as a learning tool.
+        </div>
+      </div>
+
+      <div class="reveal grid grid-cols-[5rem,1fr] gap-4 py-3 md:grid-cols-[7rem,1fr] md:gap-6">
+        <div class="font-mono text-xs text-muted md:text-sm">
+          <span class="text-accent">~$</span> 2007
+        </div>
+        <div class="font-body text-base leading-relaxed text-text md:text-lg">
+          I started studying programming at 12 — self-taught, then deepened through formal studies.
+        </div>
+      </div>
+
+      <div class="reveal grid grid-cols-[5rem,1fr] gap-4 py-3 md:grid-cols-[7rem,1fr] md:gap-6">
+        <div class="font-mono text-xs text-muted md:text-sm">
+          <span class="text-accent">~$</span> 2016.10
+        </div>
+        <div class="font-body text-base leading-relaxed text-text md:text-lg">
+          Graduated at{' '}
+          <a href="https://www.unimi.it/">Università degli Studi di Milano</a>.
+        </div>
+      </div>
+
+      <div class="reveal grid grid-cols-[5rem,1fr] gap-4 py-3 md:grid-cols-[7rem,1fr] md:gap-6">
+        <div class="font-mono text-xs text-muted md:text-sm">
+          <span class="text-accent">~$</span> now
+        </div>
+        <div class="font-body text-base leading-relaxed text-text md:text-lg">
+          Working at <a href="https://www.nearform.com/">Nearform</a> on distributed systems and
+          developer tools.
+        </div>
+      </div>
+
+      <div class="reveal grid grid-cols-[5rem,1fr] gap-4 py-3 md:grid-cols-[7rem,1fr] md:gap-6">
+        <div class="font-mono text-xs text-muted md:text-sm">
+          <span class="text-accent">~$</span> next
+        </div>
+        <div class="font-body text-base leading-relaxed text-text md:text-lg">
+          Want to know more? Keep <a href="#contacts">in touch</a> or read my{' '}
+          <a href="https://github.com/ilteoood/resume/raw/main/main.pdf">resume</a>.
+        </div>
+      </div>
     </div>
   </div>
-</div>
+</section>

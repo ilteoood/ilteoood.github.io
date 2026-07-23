@@ -1,20 +1,27 @@
 ---
+const seed = '?v=4';
 ---
 
-<figure class="flex place-content-center items-center pt-8 md:pt-16">
-  <img class="ml-4 md:ml-0 w-32 h-32 rounded-full"
-       src="https://avatars.githubusercontent.com/u/6383527?v=4"
-       alt="Me"/>
-  <div class="md:p-4 xl:p-8 pl-4 text-left">
-    <blockquote class="text-lg text-color italic">
-      "I'm looking for something that never makes me stop keeping up with the future."
+<figure class="reveal mx-auto flex max-w-3xl flex-col items-center gap-6 px-6 py-16 md:flex-row md:items-start md:gap-8 md:px-12 md:py-24">
+  <div class="relative shrink-0">
+    <div class="absolute -inset-1 rounded-full bg-accent/15 blur-md" aria-hidden="true"></div>
+    <img
+      class="relative h-24 w-24 rounded-full ring-1 ring-rule"
+      src={`https://avatars.githubusercontent.com/u/6383527${seed}`}
+      alt="Matteo Pietro Dazzi"
+      loading="lazy"
+      width="96"
+      height="96"
+    />
+  </div>
+  <div class="text-left">
+    <blockquote class="font-mono text-lg leading-relaxed text-text md:text-xl">
+      <span class="text-accent">"</span>I'm looking for something that never makes me stop keeping up with the future.<span class="text-accent">"</span>
     </blockquote>
-    <figcaption class="font-medium">
-      <div class="text-color">
-        Matteo Pietro Dazzi
-      </div>
-      <a href="https://telegram.me/iLTeoooD">
-        @iLTeoooD
+    <figcaption class="mt-4 font-mono text-sm">
+      <div class="text-text">— Matteo Pietro Dazzi</div>
+      <a href="https://telegram.me/iLTeoooD" class="text-muted hover:text-accent">
+        <span class="text-accent">@</span>iLTeoooD
       </a>
     </figcaption>
   </div>

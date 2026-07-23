@@ -1,10 +1,8 @@
 ---
-import ProjectCard from "./ProjectCard.astro";
-import { type Repository } from "../types/repository";
+import ProjectCard from './ProjectCard.astro';
+import { type Repository } from '../types/repository';
 
-const response = await fetch(
-  "https://api.github.com/users/ilteoood/repos?per_page=100",
-);
+const response = await fetch('https://api.github.com/users/ilteoood/repos?per_page=100');
 const allRepos: Repository[] = response.ok ? await response.json() : [];
 
 const repositories = allRepos
@@ -17,47 +15,60 @@ const repositories = allRepos
 const initialCount = 12;
 ---
 
-<div class="padding-content">
-  <div class="pt-5 md:pt-10 xl:pt-14 pb-2 md:pb-5 xl:pb-7" id="projects">
-    <h2 class="text-gray-50 text-2xl sm:text-4xl xl:text-6xl">Projects</h2>
-  </div>
-
-  <div id="projects-container" class="flex flex-wrap justify-between">
-    {repositories.map((repo: Repository, index: number) => (
-      <div class="mt-5 w-full md:w-[48%] lg:w-[30%] flex" data-extra={index >= initialCount ? "true" : "false"}>
-        <ProjectCard project={repo} />
+<section class="padding-content">
+  <div class="mx-auto max-w-6xl">
+    <header id="projects" class="divider pt-10 md:pt-16">
+      <div class="flex items-baseline justify-between gap-4">
+        <h2 class="font-mono text-2xl font-semibold text-text sm:text-3xl md:text-4xl">
+          <span class="text-accent">.</span>/projects
+        </h2>
+        <span class="font-mono text-xs text-muted md:text-sm">
+          git log --author=ilteoood --count=<span class="text-accent">{repositories.length}</span>
+        </span>
       </div>
-    ))}
-  </div>
+    </header>
 
-  {repositories.length > initialCount && (
-    <div id="show-more-container" class="flex justify-center mt-8">
-      <button
-        id="show-more-btn"
-        class="px-6 py-3 bg-gray-700 hover:bg-gray-600 text-gray-50 rounded-lg transition-colors"
-      >
-        Show more
-      </button>
+    <div id="projects-container" class="mt-10 grid gap-3 md:mt-14">
+      {repositories.map((repo: Repository, index: number) => (
+        <div
+          class="reveal"
+          data-extra={index >= initialCount ? 'true' : 'false'}
+          style="display: contents;"
+        >
+          <ProjectCard project={repo} />
+        </div>
+      ))}
     </div>
-  )}
-</div>
+
+    {repositories.length > initialCount && (
+      <div id="show-more-container" class="mt-12 flex justify-center">
+        <button
+          id="show-more-btn"
+          class="font-mono text-sm text-text underline decoration-rule decoration-1 underline-offset-[6px] transition-colors hover:text-accent hover:decoration-accent md:text-base"
+        >
+          <span class="text-accent">→</span> load more commits
+        </button>
+      </div>
+    )}
+  </div>
+</section>
 
 <style>
-  [data-extra="true"] {
-    display: none;
+  [data-extra='true'] {
+    display: none !important;
   }
 </style>
 
 <script>
-  const showMoreBtn = document.getElementById("show-more-btn");
-  const showMoreContainer = document.getElementById("show-more-container");
+  const showMoreBtn = document.getElementById('show-more-btn');
+  const showMoreContainer = document.getElementById('show-more-container');
 
-  showMoreBtn?.addEventListener("click", () => {
+  showMoreBtn?.addEventListener('click', () => {
     document.querySelectorAll('[data-extra="true"]').forEach((el) => {
-      (el as HTMLElement).style.display = "flex";
+      (el as HTMLElement).style.display = 'contents';
     });
     if (showMoreContainer) {
-      showMoreContainer.style.display = "none";
+      showMoreContainer.style.display = 'none';
     }
   });
 </script>
