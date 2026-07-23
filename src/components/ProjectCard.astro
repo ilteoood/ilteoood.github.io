@@ -34,6 +34,9 @@ const {
   updated_at,
 } = project;
 
+const descriptionDisplay = description ?? 'No description';
+const finalDescription = descriptionDisplay || ' ';
+
 const updatedDate = new Date(updated_at);
 const updatedRel = formatRelative(updatedDate);
 const commitHash = name.split('').reduce((a, c) => (a + c.charCodeAt(0)) % 0xffff, 0).toString(16).padStart(4, '0');
@@ -58,12 +61,12 @@ function formatRelative(date: Date): string {
     <span class="text-accent">●</span>
     <span class="ml-2">{commitHash}</span>
   </div>
-  <div class="min-w-0">
+  <div class="min-w-0 min-h-[3rem] text-left md:min-h-[3.5rem]">
     <h3 class="truncate font-mono text-base text-text group-hover:text-accent md:text-lg">
       ./<span class="font-semibold">{name}</span>
     </h3>
-    <p class="mt-1 line-clamp-1 min-h-5 font-body text-sm text-muted md:min-h-6 md:text-base">
-      {description}
+    <p class="mt-1 truncate min-h-5 font-body text-sm text-muted md:min-h-6 md:text-base">
+      {finalDescription}
     </p>
   </div>
   <div class="hidden font-mono text-xs text-muted md:block md:text-right">
