@@ -1,4 +1,5 @@
 ---
+import { formatDistanceToNow } from 'date-fns'
 import { icon, library } from '@fortawesome/fontawesome-svg-core'
 import { faBug, faCodeFork, faEye, faStar } from '@fortawesome/free-solid-svg-icons'
 import ProjectStat from './ProjectStat.astro'
@@ -33,22 +34,12 @@ const descriptionDisplay = description ?? 'No description'
 const finalDescription = descriptionDisplay || ' '
 
 const updatedDate = new Date(updated_at)
-const updatedRel = formatRelative(updatedDate)
+const updatedRel = formatDistanceToNow(updatedDate, { addSuffix: true })
 const commitHash = name
   .split('')
   .reduce((a, c) => (a + c.charCodeAt(0)) % 0xffff, 0)
   .toString(16)
   .padStart(4, '0')
-
-function formatRelative(date: Date): string {
-  const diffMs = Date.now() - date.getTime()
-  const days = Math.floor(diffMs / (1000 * 60 * 60 * 24))
-  if (days < 1) return 'today'
-  if (days < 2) return 'yesterday'
-  if (days < 30) return `${days}d ago`
-  if (days < 365) return `${Math.floor(days / 30)}mo ago`
-  return `${Math.floor(days / 365)}y ago`
-}
 ---
 
 <a
