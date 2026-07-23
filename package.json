@@ -7,10 +7,10 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "lint": "oxlint",
-    "lint:fix": "oxlint --fix",
-    "format": "oxfmt --write",
-    "format:check": "oxfmt --check --ignore-path .oxfmtignore"
+    "lint": "biome lint",
+    "lint:fix": "biome lint --write",
+    "format": "biome format --write",
+    "format:check": "biome format"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^7.3.1",
@@ -21,13 +21,8 @@
     "tailwindcss": "^4.3.3"
   },
   "devDependencies": {
+    "@biomejs/biome": "^2.5.5",
     "@tailwindcss/vite": "^4.3.3",
-    "eslint": "^10.7.0",
-    "eslint-plugin-astro": "^3.0.1",
-    "eslint-plugin-tailwindcss": "^4.0.5",
-    "oxfmt": "^0.60.0",
-    "oxlint": "^1.75.0",
-    "oxlint-plugin-eslint": "^1.75.0",
     "typescript": "^7.0.2"
   }
 }

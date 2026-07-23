@@ -1,5 +1,5 @@
 ---
-import { library, icon } from '@fortawesome/fontawesome-svg-core';
+import { library, icon } from '@fortawesome/fontawesome-svg-core'
 import {
   faMedium,
   faLinkedin,
@@ -7,10 +7,10 @@ import {
   faTelegram,
   faFacebook,
   faInstagram,
-} from '@fortawesome/free-brands-svg-icons';
-import { faSquareEnvelope } from '@fortawesome/free-solid-svg-icons';
+} from '@fortawesome/free-brands-svg-icons'
+import { faSquareEnvelope } from '@fortawesome/free-solid-svg-icons'
 
-library.add(faMedium, faLinkedin, faGithub, faTelegram, faFacebook, faInstagram, faSquareEnvelope);
+library.add(faMedium, faLinkedin, faGithub, faTelegram, faFacebook, faInstagram, faSquareEnvelope)
 
 const iconDefs: Record<string, any> = {
   medium: faMedium,
@@ -20,24 +20,44 @@ const iconDefs: Record<string, any> = {
   telegram: faTelegram,
   facebook: faFacebook,
   instagram: faInstagram,
-};
+}
 
 const contacts = [
   { name: 'medium', iconKey: 'medium', link: 'https://ilteoood.medium.com/', label: 'Medium' },
-  { name: 'linkedin', iconKey: 'linkedin', link: 'https://www.linkedin.com/in/ilteoood/', label: 'LinkedIn' },
+  {
+    name: 'linkedin',
+    iconKey: 'linkedin',
+    link: 'https://www.linkedin.com/in/ilteoood/',
+    label: 'LinkedIn',
+  },
   { name: 'github', iconKey: 'github', link: 'https://github.com/ilteoood/', label: 'GitHub' },
   { name: 'email', iconKey: 'email', link: 'mailto:matteopietro.dazzi@gmail.com', label: 'Email' },
-  { name: 'telegram', iconKey: 'telegram', link: 'https://telegram.me/iLTeoooD', label: 'Telegram' },
-  { name: 'facebook', iconKey: 'facebook', link: 'https://facebook.com/iLTeoooD', label: 'Facebook' },
-  { name: 'instagram', iconKey: 'instagram', link: 'https://www.instagram.com/_ilteoood', label: 'Instagram' },
-];
+  {
+    name: 'telegram',
+    iconKey: 'telegram',
+    link: 'https://telegram.me/iLTeoooD',
+    label: 'Telegram',
+  },
+  {
+    name: 'facebook',
+    iconKey: 'facebook',
+    link: 'https://facebook.com/iLTeoooD',
+    label: 'Facebook',
+  },
+  {
+    name: 'instagram',
+    iconKey: 'instagram',
+    link: 'https://www.instagram.com/_ilteoood',
+    label: 'Instagram',
+  },
+]
 
 const iconSvgs = contacts.map((c) => ({
   html: icon(iconDefs[c.iconKey]).html,
   link: c.link,
   label: c.label,
   name: c.name,
-}));
+}))
 ---
 
 <section class="padding-content">
@@ -45,7 +65,8 @@ const iconSvgs = contacts.map((c) => ({
     <header id="contacts" class="divider pt-10 md:pt-16">
       <div class="flex items-baseline gap-4">
         <span class="font-mono text-sm text-muted md:text-base">
-          <span class="text-accent">//</span> 03
+          <span class="text-accent">//</span>
+          03
         </span>
         <h2 class="font-mono text-2xl font-semibold text-text sm:text-3xl md:text-4xl">
           <span class="text-accent">.</span>/contacts
@@ -55,7 +76,8 @@ const iconSvgs = contacts.map((c) => ({
 
     <div class="reveal mt-10 md:mt-14">
       <p class="font-mono text-sm text-muted md:text-base">
-        <span class="text-accent">$</span> cat contacts.txt
+        <span class="text-accent">$</span>
+        cat contacts.txt
       </p>
       <ul class="mt-4 divide-y divide-rule border-y border-rule">
         {iconSvgs.map((contact) => (

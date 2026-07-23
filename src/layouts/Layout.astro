@@ -1,85 +1,88 @@
 ---
-import '../styles/global.css';
+import '../styles/global.css'
 
 interface Props {
-  title: string;
-  description?: string;
+  title: string
+  description?: string
 }
 
-const { title, description = 'Staff Software Engineer · Open source · Node.js, distributed systems and developer tools' } = Astro.props;
+const {
+  title,
+  description = 'Staff Software Engineer · Open source · Node.js, distributed systems and developer tools',
+} = Astro.props
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content={description} />
-    <meta name="theme-color" content="#0b0f14" />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:type" content="website" />
-    <meta name="generator" content={Astro.generator} />
+    <meta charset="utf-8">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content={description}>
+    <meta name="theme-color" content="#0b0f14">
+    <meta property="og:title" content={title}>
+    <meta property="og:description" content={description}>
+    <meta property="og:type" content="website">
+    <meta name="generator" content={Astro.generator}>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
-    />
+    >
 
     <title>{title}</title>
   </head>
   <body class="bg-background text-text min-h-screen antialiased">
     <slot />
     <script>
-      const enableReveal = () => {
-        if (document.documentElement.classList.contains('js-reveal')) return;
-        document.documentElement.classList.add('js-reveal');
+    const enableReveal = () => {
+      if (document.documentElement.classList.contains('js-reveal')) return
+      document.documentElement.classList.add('js-reveal')
 
-        const hash = window.location.hash;
-        if (hash) {
-          const element = document.querySelector(hash);
-          if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
-          }
+      const hash = window.location.hash
+      if (hash) {
+        const element = document.querySelector(hash)
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' })
         }
-
-        const reveal = (el: Element) => {
-          el.classList.add('visible');
-        };
-
-        const observer = new IntersectionObserver(
-          (entries) => {
-            for (const entry of entries) {
-              if (entry.isIntersecting) {
-                reveal(entry.target);
-                observer.unobserve(entry.target);
-              }
-            }
-          },
-          { threshold: 0.05, rootMargin: '0px 0px -10% 0px' },
-        );
-
-        const targets = document.querySelectorAll('.reveal');
-        targets.forEach((el) => {
-          const rect = el.getBoundingClientRect();
-          if (rect.top < window.innerHeight && rect.bottom > 0) {
-            reveal(el);
-          } else {
-            observer.observe(el);
-          }
-        });
-      };
-
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', enableReveal, { once: true });
-      } else {
-        enableReveal();
       }
-      document.addEventListener('astro:page-load', enableReveal);
+
+      const reveal = (el: Element) => {
+        el.classList.add('visible')
+      }
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            if (entry.isIntersecting) {
+              reveal(entry.target)
+              observer.unobserve(entry.target)
+            }
+          }
+        },
+        { threshold: 0.05, rootMargin: '0px 0px -10% 0px' },
+      )
+
+      const targets = document.querySelectorAll('.reveal')
+      targets.forEach((el) => {
+        const rect = el.getBoundingClientRect()
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+          reveal(el)
+        } else {
+          observer.observe(el)
+        }
+      })
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', enableReveal, { once: true })
+    } else {
+      enableReveal()
+    }
+    document.addEventListener('astro:page-load', enableReveal)
     </script>
   </body>
 </html>

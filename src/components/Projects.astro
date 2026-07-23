@@ -1,18 +1,18 @@
 ---
-import ProjectCard from './ProjectCard.astro';
-import { type Repository } from '../types/repository';
+import ProjectCard from './ProjectCard.astro'
+import { type Repository } from '../types/repository'
 
-const response = await fetch('https://api.github.com/users/ilteoood/repos?per_page=100');
-const allRepos: Repository[] = response.ok ? await response.json() : [];
+const response = await fetch('https://api.github.com/users/ilteoood/repos?per_page=100')
+const allRepos: Repository[] = response.ok ? await response.json() : []
 
 const repositories = allRepos
   .filter((repo: Repository) => !repo.fork)
   .sort(
     (a: Repository, b: Repository) =>
       new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime(),
-  );
+  )
 
-const initialCount = 12;
+const initialCount = 12
 ---
 
 <section class="padding-content">
@@ -40,6 +40,7 @@ const initialCount = 12;
       <div id="show-more-container" class="mt-12 flex justify-center">
         <button
           id="show-more-btn"
+          type="button"
           class="font-mono text-sm text-text underline decoration-rule decoration-1 underline-offset-[6px] transition-colors hover:text-accent hover:decoration-accent md:text-base"
         >
           <span class="text-accent">→</span> load more commits
@@ -50,21 +51,21 @@ const initialCount = 12;
 </section>
 
 <style>
-  [data-extra='true'] {
-    display: none;
-  }
+[data-extra="true"] {
+  display: none;
+}
 </style>
 
 <script>
-  const showMoreBtn = document.getElementById('show-more-btn');
-  const showMoreContainer = document.getElementById('show-more-container');
+const showMoreBtn = document.getElementById('show-more-btn')
+const showMoreContainer = document.getElementById('show-more-container')
 
-  showMoreBtn?.addEventListener('click', () => {
-    document.querySelectorAll('[data-extra="true"]').forEach((el) => {
-      (el as HTMLElement).style.display = 'grid';
-    });
-    if (showMoreContainer) {
-      showMoreContainer.style.display = 'none';
-    }
-  });
+showMoreBtn?.addEventListener('click', () => {
+  document.querySelectorAll('[data-extra="true"]').forEach((el) => {
+    ;(el as HTMLElement).style.display = 'grid'
+  })
+  if (showMoreContainer) {
+    showMoreContainer.style.display = 'none'
+  }
+})
 </script>
