@@ -6,12 +6,12 @@
   --color-rule: #1b2433;
   --color-text: #d7dee8;
   --color-muted: #6e7a8a;
-  --color-link: #c8ff6e;
-  --color-link-hover: #ddff9c;
-  --color-accent: #c8ff6e;
+  --color-link: #6ec1ff;
+  --color-link-hover: #9cd9ff;
+  --color-accent: #6ec1ff;
   --color-accent-warm: #ff7a59;
   --color-heart: #ff7a59;
-  --color-react: #c8ff6e;
+  --color-react: #6ec1ff;
 
   --font-display: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
   --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
@@ -137,5 +137,5 @@ html.js-reveal .reveal.visible {
 }
 
 .glow {
-  text-shadow: 0 0 24px rgba(200, 255, 110, 0.18);
+  text-shadow: 0 0 24px rgba(110, 193, 255, 0.18);
 }
