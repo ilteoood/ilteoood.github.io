@@ -30,11 +30,7 @@ const initialCount = 12;
 
     <div id="projects-container" class="mt-10 grid gap-3 md:mt-14">
       {repositories.map((repo: Repository, index: number) => (
-        <div
-          class="reveal"
-          data-extra={index >= initialCount ? 'true' : 'false'}
-          style="display: contents;"
-        >
+        <div class="reveal" data-extra={index >= initialCount ? 'true' : 'false'}>
           <ProjectCard project={repo} />
         </div>
       ))}
@@ -65,7 +61,7 @@ const initialCount = 12;
 
   showMoreBtn?.addEventListener('click', () => {
     document.querySelectorAll('[data-extra="true"]').forEach((el) => {
-      (el as HTMLElement).style.display = 'contents';
+      (el as HTMLElement).style.display = 'grid';
     });
     if (showMoreContainer) {
       showMoreContainer.style.display = 'none';
