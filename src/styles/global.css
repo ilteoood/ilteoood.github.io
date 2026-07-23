@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @theme {
   --color-background: #0b0f14;
@@ -13,9 +13,9 @@
   --color-heart: #ff7a59;
   --color-react: #6ec1ff;
 
-  --font-display: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
-  --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
-  --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+  --font-display: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
 }
 
 @layer base {
@@ -27,7 +27,7 @@
     background-color: var(--color-background);
     color: var(--color-text);
     font-family: var(--font-body);
-    font-feature-settings: 'ss01', 'cv11';
+    font-feature-settings: "ss01", "cv11";
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
@@ -99,7 +99,7 @@
 }
 
 .cursor-blink::after {
-  content: '█';
+  content: "█";
   display: inline-block;
   margin-left: 0.1em;
   color: var(--color-accent);

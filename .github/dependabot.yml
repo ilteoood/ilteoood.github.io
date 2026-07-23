@@ -10,11 +10,9 @@ updates:
       - 'dependencies'
       - 'javascript'
     groups:
-      oxc-tooling:
+      biome-tooling:
         patterns:
-          - 'oxlint'
-          - 'oxlint-plugin-eslint'
-          - 'oxfmt'
+          - '@biomejs/biome'
       fontawesome:
         patterns:
           - '@fortawesome/*'

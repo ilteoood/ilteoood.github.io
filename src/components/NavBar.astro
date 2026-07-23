@@ -1,14 +1,14 @@
 ---
 interface Props {
-  sections: { id: string; label: string }[];
+  sections: { id: string; label: string }[]
 }
 
-const { sections } = Astro.props;
+const { sections } = Astro.props
 const navItems = [
   { id: 'about-me', label: 'about.me' },
   { id: 'projects', label: 'projects' },
   { id: 'contacts', label: 'contacts' },
-];
+]
 ---
 
 <nav
@@ -18,7 +18,8 @@ const navItems = [
 >
   <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 md:px-12">
     <a href="#describe-me" class="font-mono text-sm font-semibold text-text hover:text-accent">
-      <span class="text-accent">~$</span> ilteoood
+      <span class="text-accent">~$</span>
+      ilteoood
     </a>
     <div class="flex items-center gap-6 md:gap-8">
       {sections.map((section) => (
@@ -33,52 +34,55 @@ const navItems = [
       ))}
     </div>
   </div>
-  <div class="divider mx-auto max-w-6xl opacity-0 transition-opacity duration-300" id="navbar-rule"></div>
+  <div
+    class="divider mx-auto max-w-6xl opacity-0 transition-opacity duration-300"
+    id="navbar-rule"
+  ></div>
 </nav>
 
 <style>
-  .nav-link.active .prompt-mark {
-    opacity: 1;
-  }
+.nav-link.active .prompt-mark {
+  opacity: 1;
+}
 
-  .nav-link.active {
-    color: var(--color-text);
-  }
+.nav-link.active {
+  color: var(--color-text);
+}
 </style>
 
 <script>
-  const navbar = document.getElementById('navbar');
-  const rule = document.getElementById('navbar-rule');
-  const navLinks = document.querySelectorAll<HTMLAnchorElement>('.nav-link');
-  let scrolled = false;
+const navbar = document.getElementById('navbar')
+const rule = document.getElementById('navbar-rule')
+const navLinks = document.querySelectorAll<HTMLAnchorElement>('.nav-link')
+let scrolled = false
 
-  const handleScroll = () => {
-    if (window.scrollY > 40 && !scrolled) {
-      navbar?.classList.add('bg-background/80', 'backdrop-blur-md');
-      navbar?.classList.remove('bg-transparent');
-      rule?.classList.add('opacity-100');
-      scrolled = true;
-    } else if (window.scrollY <= 40 && scrolled) {
-      navbar?.classList.remove('bg-background/80', 'backdrop-blur-md');
-      navbar?.classList.add('bg-transparent');
-      rule?.classList.remove('opacity-100');
-      scrolled = false;
-    }
-  };
+const handleScroll = () => {
+  if (window.scrollY > 40 && !scrolled) {
+    navbar?.classList.add('bg-background/80', 'backdrop-blur-md')
+    navbar?.classList.remove('bg-transparent')
+    rule?.classList.add('opacity-100')
+    scrolled = true
+  } else if (window.scrollY <= 40 && scrolled) {
+    navbar?.classList.remove('bg-background/80', 'backdrop-blur-md')
+    navbar?.classList.add('bg-transparent')
+    rule?.classList.remove('opacity-100')
+    scrolled = false
+  }
+}
 
-  let activeId = '';
-  const updateActiveLink = () => {
-    const hash = window.location.hash.slice(1);
-    if (hash === activeId) return;
-    activeId = hash;
-    navLinks.forEach((link) => {
-      const sectionId = link.getAttribute('data-section');
-      link.classList.toggle('active', sectionId === hash);
-    });
-  };
+let activeId = ''
+const updateActiveLink = () => {
+  const hash = window.location.hash.slice(1)
+  if (hash === activeId) return
+  activeId = hash
+  navLinks.forEach((link) => {
+    const sectionId = link.getAttribute('data-section')
+    link.classList.toggle('active', sectionId === hash)
+  })
+}
 
-  window.addEventListener('scroll', handleScroll, { passive: true });
-  window.addEventListener('hashchange', updateActiveLink);
-  updateActiveLink();
-  handleScroll();
+window.addEventListener('scroll', handleScroll, { passive: true })
+window.addEventListener('hashchange', updateActiveLink)
+updateActiveLink()
+handleScroll()
 </script>
