@@ -54,25 +54,27 @@ function formatRelative(date: Date): string {
 
 <a
   href={html_url}
-  class="group grid grid-cols-[6rem,1fr,auto] items-start gap-4 border-b border-rule px-3 py-4 transition-colors hover:bg-panel md:grid-cols-[8rem,1fr,auto] md:gap-6 md:px-4 md:py-5"
+  class="group block border-b border-rule px-3 py-4 transition-colors hover:bg-panel md:px-4 md:py-5"
   rel="noopener noreferrer"
 >
-  <div class="font-mono text-xs text-muted md:text-sm">
-    <span class="text-accent">●</span>
-    <span class="ml-2">{commitHash}</span>
+  <div class="flex items-baseline gap-4 md:gap-6">
+    <div class="w-24 shrink-0 font-mono text-xs text-muted md:w-32 md:text-sm">
+      <span class="text-accent">●</span>
+      <span class="ml-2">{commitHash}</span>
+    </div>
+    <div class="min-w-0 flex-1 text-left">
+      <h3 class="truncate font-mono text-base text-text group-hover:text-accent md:text-lg">
+        ./<span class="font-semibold">{name}</span>
+      </h3>
+      <p class="mt-1 truncate min-h-5 font-body text-sm text-muted md:min-h-6 md:text-base">
+        {finalDescription}
+      </p>
+    </div>
+    <div class="hidden shrink-0 font-mono text-xs text-muted md:block md:text-right">
+      <span class="text-accent">↑</span> {updatedRel}
+    </div>
   </div>
-  <div class="min-w-0 min-h-[3rem] text-left md:min-h-[3.5rem]">
-    <h3 class="truncate font-mono text-base text-text group-hover:text-accent md:text-lg">
-      ./<span class="font-semibold">{name}</span>
-    </h3>
-    <p class="mt-1 truncate min-h-5 font-body text-sm text-muted md:min-h-6 md:text-base">
-      {finalDescription}
-    </p>
-  </div>
-  <div class="hidden font-mono text-xs text-muted md:block md:text-right">
-    <span class="text-accent">↑</span> {updatedRel}
-  </div>
-  <div class="col-span-3 mt-2 flex flex-wrap gap-3 font-mono text-xs text-muted md:col-span-3 md:mt-0 md:justify-end md:text-sm">
+  <div class="mt-2 flex flex-wrap gap-3 font-mono text-xs text-muted md:mt-0 md:justify-end md:text-sm">
     <ProjectStat value={stargazers_count} icon={iconSvgs.star} />
     <ProjectStat value={forks_count} icon={iconSvgs.fork} />
     <ProjectStat value={watchers_count} icon={iconSvgs.eye} />
