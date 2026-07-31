@@ -1,5 +1,5 @@
 ---
-import { library, icon } from '@fortawesome/fontawesome-svg-core'
+import { icon, library } from '@fortawesome/fontawesome-svg-core'
 import {
   faMedium,
   faLinkedin,
@@ -12,51 +12,46 @@ import { faSquareEnvelope } from '@fortawesome/free-solid-svg-icons'
 
 library.add(faMedium, faLinkedin, faGithub, faTelegram, faFacebook, faInstagram, faSquareEnvelope)
 
-const iconDefs: Record<string, any> = {
-  medium: faMedium,
-  linkedin: faLinkedin,
-  github: faGithub,
-  email: faSquareEnvelope,
-  telegram: faTelegram,
-  facebook: faFacebook,
-  instagram: faInstagram,
-}
-
 const contacts = [
-  { name: 'medium', iconKey: 'medium', link: 'https://ilteoood.medium.com/', label: 'Medium' },
+  { name: 'medium', icon: faMedium, link: 'https://ilteoood.medium.com/', label: 'Medium' },
   {
     name: 'linkedin',
-    iconKey: 'linkedin',
+    icon: faLinkedin,
     link: 'https://www.linkedin.com/in/ilteoood/',
     label: 'LinkedIn',
   },
-  { name: 'github', iconKey: 'github', link: 'https://github.com/ilteoood/', label: 'GitHub' },
-  { name: 'email', iconKey: 'email', link: 'mailto:matteopietro.dazzi@gmail.com', label: 'Email' },
+  { name: 'github', icon: faGithub, link: 'https://github.com/ilteoood/', label: 'GitHub' },
+  {
+    name: 'email',
+    icon: faSquareEnvelope,
+    link: 'mailto:matteopietro.dazzi@gmail.com',
+    label: 'Email',
+  },
   {
     name: 'telegram',
-    iconKey: 'telegram',
+    icon: faTelegram,
     link: 'https://telegram.me/iLTeoooD',
     label: 'Telegram',
   },
   {
     name: 'facebook',
-    iconKey: 'facebook',
+    icon: faFacebook,
     link: 'https://facebook.com/iLTeoooD',
     label: 'Facebook',
   },
   {
     name: 'instagram',
-    iconKey: 'instagram',
+    icon: faInstagram,
     link: 'https://www.instagram.com/_ilteoood',
     label: 'Instagram',
   },
 ]
 
-const iconSvgs = contacts.map((c) => ({
-  html: icon(iconDefs[c.iconKey]).html,
-  link: c.link,
-  label: c.label,
-  name: c.name,
+const iconSvgs = contacts.map((contact) => ({
+  html: icon(contact.icon).html,
+  link: contact.link,
+  label: contact.label,
+  name: contact.name,
 }))
 ---
 
@@ -89,7 +84,7 @@ const iconSvgs = contacts.map((c) => ({
               class="group flex items-center gap-4 px-2 py-3 transition-colors hover:bg-panel md:px-3 md:py-4"
               aria-label={contact.label}
             >
-              <span class="font-mono text-xs text-muted md:text-sm">
+              <span class="font-mono text-muted text-xs md:text-sm">
                 <span class="text-accent">→</span>
               </span>
               <span class="hidden h-4 w-4 text-text md:inline-flex [&_svg]:h-4 [&_svg]:w-4">
@@ -98,10 +93,10 @@ const iconSvgs = contacts.map((c) => ({
               <span class="font-mono text-sm text-text group-hover:text-accent md:text-base">
                 {contact.name}
               </span>
-              <span class="hidden font-mono text-xs text-muted md:inline md:flex-1 md:truncate">
+              <span class="hidden font-mono text-muted text-xs md:inline md:flex-1 md:truncate">
                 {contact.link.replace(/^https?:\/\//, '')}
               </span>
-              <span class="ml-auto font-mono text-xs text-muted opacity-0 transition-opacity group-hover:opacity-100 md:text-sm">
+              <span class="ml-auto font-mono text-muted text-xs opacity-0 transition-opacity group-hover:opacity-100 md:text-sm">
                 open ↗
               </span>
             </a>

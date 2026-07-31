@@ -1,6 +1,6 @@
 ---
 import ProjectCard from './ProjectCard.astro'
-import { type Repository } from '../types/repository'
+import type { Repository } from '../types/repository'
 
 const response = await fetch('https://api.github.com/users/ilteoood/repos?per_page=100')
 const allRepos: Repository[] = response.ok ? await response.json() : []
@@ -41,7 +41,7 @@ const initialCount = 12
         <button
           id="show-more-btn"
           type="button"
-          class="font-mono text-sm text-text underline decoration-rule decoration-1 underline-offset-[6px] transition-colors hover:text-accent hover:decoration-accent md:text-base"
+          class="font-mono text-sm text-text underline decoration-1 decoration-rule underline-offset-[6px] transition-colors hover:text-accent hover:decoration-accent md:text-base"
         >
           <span class="text-accent">→</span> load more commits
         </button>

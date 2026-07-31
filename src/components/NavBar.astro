@@ -4,11 +4,6 @@ interface Props {
 }
 
 const { sections } = Astro.props
-const navItems = [
-  { id: 'about-me', label: 'about.me' },
-  { id: 'projects', label: 'projects' },
-  { id: 'contacts', label: 'contacts' },
-]
 ---
 
 <nav
@@ -29,7 +24,7 @@ const navItems = [
       {sections.map((section) => (
         <a
           href={`#${section.id}`}
-          class="nav-link font-mono text-xs text-muted transition-colors duration-200 hover:text-text md:text-sm"
+          class="nav-link font-mono text-muted text-xs transition-colors duration-200 hover:text-text md:text-sm"
           data-section={section.id}
         >
           <span class="prompt-mark text-accent opacity-0 transition-opacity duration-200">&gt;</span>
