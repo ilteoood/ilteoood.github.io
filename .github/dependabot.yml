@@ -1,31 +1,31 @@
 version: 2
 
 updates:
-  - package-ecosystem: 'npm'
-    directory: '/'
+  - package-ecosystem: "npm"
+    directory: "/"
     schedule:
-      interval: 'daily'
+      interval: "daily"
     open-pull-requests-limit: 10
     labels:
-      - 'dependencies'
-      - 'javascript'
+      - "dependencies"
+      - "javascript"
     groups:
       biome-tooling:
         patterns:
-          - '@biomejs/biome'
+          - "@biomejs/biome"
       fontawesome:
         patterns:
-          - '@fortawesome/*'
+          - "@fortawesome/*"
       tailwind:
         patterns:
-          - 'tailwindcss'
-          - '@tailwindcss/*'
+          - "tailwindcss"
+          - "@tailwindcss/*"
       astro-stack:
         patterns:
-          - 'astro'
-          - 'astro-typewriter'
+          - "astro"
+          - "astro-typewriter"
       dev-deps:
-        dependency-type: 'development'
+        dependency-type: "development"
         update-types:
-          - 'minor'
-          - 'patch'
+          - "minor"
+          - "patch"

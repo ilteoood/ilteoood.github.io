@@ -8,7 +8,7 @@ const { sections } = Astro.props
 
 <nav
   id="navbar"
-  class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent"
+  class="fixed top-0 right-0 left-0 z-50 bg-transparent transition-all duration-300"
   aria-label="Primary"
 >
   <div
@@ -24,7 +24,7 @@ const { sections } = Astro.props
       {sections.map((section) => (
         <a
           href={`#${section.id}`}
-          class="nav-link font-mono text-muted text-xs transition-colors duration-200 hover:text-text md:text-sm"
+          class="nav-link font-mono text-xs text-muted transition-colors duration-200 hover:text-text md:text-sm"
           data-section={section.id}
         >
           <span class="prompt-mark text-accent opacity-0 transition-opacity duration-200">

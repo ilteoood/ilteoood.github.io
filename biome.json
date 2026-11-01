@@ -55,8 +55,11 @@
         "noUnusedVariables": "warn"
       },
       "nursery": {
-        "useSortedClasses": "warn"
+        "useTailwindSortedClasses": "warn"
       }
     }
+  },
+  "tailwind": {
+    "stylesheet": "./src/styles/global.css"
   }
 }

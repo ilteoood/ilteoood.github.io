@@ -84,7 +84,7 @@ const iconSvgs = contacts.map((contact) => ({
               class="group flex items-center gap-4 px-2 py-3 transition-colors hover:bg-panel md:px-3 md:py-4"
               aria-label={contact.label}
             >
-              <span class="font-mono text-muted text-xs md:text-sm">
+              <span class="font-mono text-xs text-muted md:text-sm">
                 <span class="text-accent">→</span>
               </span>
               <span class="hidden h-4 w-4 text-text md:inline-flex [&_svg]:h-4 [&_svg]:w-4">
@@ -93,10 +93,10 @@ const iconSvgs = contacts.map((contact) => ({
               <span class="font-mono text-sm text-text group-hover:text-accent md:text-base">
                 {contact.name}
               </span>
-              <span class="hidden font-mono text-muted text-xs md:inline md:flex-1 md:truncate">
+              <span class="hidden font-mono text-xs text-muted md:inline md:flex-1 md:truncate">
                 {contact.link.replace(/^https?:\/\//, '')}
               </span>
-              <span class="ml-auto font-mono text-muted text-xs opacity-0 transition-opacity group-hover:opacity-100 md:text-sm">
+              <span class="ml-auto font-mono text-xs text-muted opacity-0 transition-opacity group-hover:opacity-100 md:text-sm">
                 open ↗
               </span>
             </a>
